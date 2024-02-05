@@ -1,0 +1,118 @@
+.Home{
+    text-align: center;
+    color: black;
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.MainDiv{
+    display: grid; 
+    grid-template-columns: 50% 50%; 
+}
+
+.vector1{
+    float: left;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+
+.vector2{
+    float: bottom;
+    right: 0;
+    bottom: 0;
+    width: 30%;
+    height: 40%;
+    position: absolute;
+}
+
+.peopleImage{
+    position: absolute;
+    float: left;
+    width: 50%;
+    height: 100vh;
+    top: 10px;
+    left: 20px;
+}
+
+.images{
+    top: 0;
+    left: 0;
+    flex: 50%;
+}
+
+.textDiv{
+    text-align: center;
+    margin: auto;
+    font-family: Inknut Antiqua;
+}
+
+.logoImage{
+    margin: auto 20px;
+    width: 60%;
+    height: 160px;
+}
+
+.nameInput{
+    border: #D3EEFF;
+    background: #D3EEFF;
+    height: 35px;
+    width: 40%;
+    text-align: center;
+    margin-right: 20px;
+    outline: none;
+    -webkit-transition: 1s;
+    transition: 1s;
+}
+
+.idInput{
+    border: #D3EEFF;
+    background: #D3EEFF;
+    height: 35px;
+    width: 35%;
+    text-align: center;
+    outline: none;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+}
+
+.nameInput:focus,.idInput:focus{
+    border: 1px solid #6579bc;
+}
+
+.loginButton{
+    border: #D3EEFF;
+    background-image: linear-gradient(to bottom, #214EDF, #5478EC);
+    background-image: linear-gradient(to bottom, #3a5dd1, #7089db);
+    height: 40px;
+    width: 42%;
+    text-align: center;
+    border-radius: 30px;
+    color: #FFF;
+    font-size: 12px;
+    font-family: Inknut Antiqua;
+}
+
+.loginButton:hover{
+    animation-name: example;
+    animation-duration: 2s;
+    animation-timing-function: infinite;
+}
+
+@keyframes example {
+  from {
+    font-size: 12px;
+    background-image: linear-gradient(to bottom, #3a5dd1, #7089db);
+
+  }
+
+  to {
+    font-size: 14px;
+    background-image: linear-gradient(to bottom, #214ddf, #5478EC);
+
+  }
+}
