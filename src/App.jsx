@@ -1,8 +1,9 @@
 import logo from './logo.svg';
 import './App.css';
-import HomeLoginPage from './pages/HomeLoginPage.js'
-import CandidateInfo from './pages/CandidateInfo';
+import HomeLoginPage from './pages/HomeLoginPage.jsx'
+import CandidateInfo from './pages/CandidateInfo.jsx';
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
+import VapeView from './pages/VapeView.jsx';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
           <Routes>
             <Route path='/' element={<HomeLoginPage />} />
             <Route path='/candidateInfo' element={<CandidateInfo />} />
+            <Route path='/vape' element={<VapeView />} />
           </Routes>
         </header>
       </BrowserRouter>
