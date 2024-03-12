@@ -8,7 +8,7 @@ import DrugsIcon from '../resources/drugsIcon.svg';
 import Alcohol from '../resources/alcohol.svg';
 import BAC from '../resources/bac.svg';
 
-const ProgressBar = () => {
+const ProgressBar = (props) => {
     const sections = [
         {
             title:"basic_info",
@@ -35,7 +35,7 @@ const ProgressBar = () => {
             img: BAC,
         }
     ];
-    const selected = "vape";
+    const selected = props.selected ? props.selected : "vape";
         return (
             <>
                 {/* <div className='progressBar' style={{display: 'flex', alignItems: 'center', margin: '40px 0 0 20px'}}> */}
@@ -107,9 +107,9 @@ width: 20%;
   width: 80%;
   height: 10px;
   background-color: white;
-  top: 50px;
-  /* bottom: 0;
-  margin-left: -3px; */
+  top: 35px;
+  /* bottom: 0; */
+  margin-left: -1px;
   z-index: -1;
 }
 /* span{

@@ -1,18 +1,20 @@
 import * as React from "react";
 import styled from "styled-components";
 import ProgressBar from "./ProgressBar";
-import Slider from "rc-slider";
+// import Slider from "rc-slider";
 import "rc-slider/assets/index.css";
 import VapeSlider from '../resources/vape_slider.svg';
+import Cigarrette from '../resources/cigarrete.svg';
+import Marijuana from '../resources/marijuana.svg';
 import SliderComp from "./SliderComp";
 // import {Label, Slider, SliderOutput, SliderThumb, SliderTrack} from 'react-aria-components';
 
 const VapeView = () => {
     return(
         <VapeWrap>      
-            <ProgressBarWrap>
+            {/* <ProgressBarWrap>
                <ProgressBar />
-            </ProgressBarWrap>
+            </ProgressBarWrap> */}
             {/* <Slider defaultValue={50}>
   <Label>Opacity</Label>
   <SliderOutput />
@@ -21,7 +23,7 @@ const VapeView = () => {
   </SliderTrack>
 </Slider> */}
 
-            <Form>
+            {/* <Form> */}
                 <h2>Vape/Smoke</h2>
                 <h3>Over the past 30 days, how many days, if any, did you…</h3>
                 <QuestionSection>
@@ -32,7 +34,8 @@ const VapeView = () => {
                     <h3>Use electronic vapor products?</h3>
                     </div>
                     <p>By electronic vapor products we mean Vapes, vaporizers, vape pens, hookah pens, electronic cigarettes (e-cigarettes or e-cigs), e-pipes, or electronic nicotine delivery systems (ENDS).</p>
-                    <SliderWrap>
+                    <SliderComp icon={VapeSlider} />
+                    {/* <SliderWrap>
 <Slider
         defaultValue={20}
         min={0}
@@ -56,7 +59,7 @@ const VapeView = () => {
         // background: "center"
         }}
       />
-      </SliderWrap>
+      </SliderWrap> */}
                 </QuestionSection>
                 <QuestionSection>
                     <div>
@@ -66,7 +69,7 @@ const VapeView = () => {
                     <h3>Use tobacco?</h3>
                     </div>
                     <p>By tobacco, we mean menthol cigarettes, regular cigarettes, and loose tobacco rolled into cigarettes or cigars, pipe tobacco, snuff, chewing tobacco, dipping tobacco, snus, and others.</p>
-                    <SliderComp />
+                    <SliderComp icon={Cigarrette} />
                 </QuestionSection>
                 <QuestionSection>
                     <div>
@@ -76,19 +79,19 @@ const VapeView = () => {
                     <h3>Use marijuana or hashish?</h3>
                     </div>
                     <p>Marijuana is sometimes called cannabis, weed, blunt, hydro, grass, or pot. Hashish is sometimes called hash or hash oil.</p>
-                    <SliderComp />              
+                    <SliderComp icon={Marijuana} />              
                 </QuestionSection>
-            </Form>
+            {/* </Form> */}
         </VapeWrap>
     );
 }
 
-const VapeWrap = styled.article`
-width: 100%;
+export const VapeWrap = styled.article`
+/* width: 100%;
 background-color: #D3EEFF;
 display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: center; */
     .rc-slider{
         /* width: 70%; */
     }
@@ -104,12 +107,13 @@ display: flex;
         /* font-size: 1em; */
         font-size: 22px;
         margin: 0;
-        margin-left: 35px;
+        /* margin-left: 35px; */
     }
     h3{
         /* font-size: 0.8em; */
         font-size: 18px;
         margin: 0;
+        font-weight: normal;
         /* padding: 5px 0; */
         /* line-height: 0; */
     }
@@ -123,11 +127,11 @@ display: flex;
 `;
 
 const QuestionNumber = styled.div`
-background-color: blue;
+background-color: #4D71E5;
 width: 20px;
 height: 20px;
 position: absolute;
-    left: -30px;
+    left: -40px;
     top: 14px;
 border-radius: 50%;
 font-size: 13px;
@@ -153,12 +157,12 @@ const Form = styled.section`
 width: 80%;
 background-color: white;
 margin: 20px 100px;
-padding: 20px;
+padding: 30px;
 `;
 
-const SliderWrap = styled.div`
- margin: 25px 0 40px;
-`;
+// const SliderWrap = styled.div`
+//  margin: 25px 0 40px;
+// `;
 
 const QuestionSection = styled.section`
 position: relative;
