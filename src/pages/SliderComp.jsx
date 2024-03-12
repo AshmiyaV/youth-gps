@@ -1,9 +1,14 @@
 import * as React from "react";
 import styled from "styled-components";
 import Slider from "rc-slider";
-import VapeSlider from '../resources/vape_slider.svg';
+import Cigarrette from '../resources/cigarrete.svg';
 
-const SliderComp = () => {
+// interface ISliderProps{
+// icon: String;
+
+// }
+
+const SliderComp = (props) => {
     const handleLabel = (node, handleProps) => {
     const left = parseFloat(node.props.style.left) - 1.5;
     console.log(typeof(left))
@@ -26,7 +31,7 @@ const SliderComp = () => {
                     width: 50,
                     marginLeft: -10,
                     marginTop: -10,
-                  backgroundImage: `url(${VapeSlider})`,
+                  backgroundImage: `url(${props.icon ? props.icon : Cigarrette})`,
                   backgroundPosition: 'center',
                   backgroundSize: "40px 40px",
                   backgroundRepeat: 'no-repeat',
