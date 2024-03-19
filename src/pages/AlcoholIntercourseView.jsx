@@ -59,7 +59,7 @@ width: 20px;
 height: 20px;
 position: absolute;
     left: -40px;
-    top: 3px;
+    top: 10px;
 border-radius: 50%;
 font-size: 13px;
 color: white;
@@ -79,31 +79,8 @@ align-items: center;
 `;
 
 const SelectWrap = styled.div`
-    /* display: flex; */
-    /* align-items: center; */
     width: 250px;
     height: 42px;
-    /* justify-content: space-between; */
-    /* .sectionTest { */
-    /* :global  */
-    /* .Select-control {
-        height: 30px;
-    }
-    .Select-placeholder {
-        line-height: 20px
-    }
-     .Select-value {
-      line-height: 26px !important;
-    }
-
-    .Select-value-label {
-        line-height: 26px;
-      }
-
-    .Select-input {
-      height: 26px;
-    } */
-/* } */
 >div>div{
     /* height: 25px; */
     font-size: 14px;

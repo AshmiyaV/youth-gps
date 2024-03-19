@@ -1,41 +1,36 @@
 import React from "react";
 import classNames from 'classnames';
-import User from '../resources/user.svg';
-import CheckList from '../resources/checklist.svg';
+import Risk from '../resources/risk.svg';
 import styled from "styled-components";
-import Vape from '../resources/vape.svg';
-import DrugsIcon from '../resources/drugsIcon.svg';
+import Abuse from '../resources/abuse.svg';
+import HIVIcon from '../resources/hiv.svg';
 import Alcohol from '../resources/alcohol.svg';
-import BAC from '../resources/bac.svg';
+import Heart from '../resources/heart.svg';
 
-const ProgressBar = (props) => {
+const ProgressBar2 = (props) => {
     const sections = [
-        {
-            title:"basic_info",
-            img: User,
-        },
-        {
-            title:"checklist",
-            img: CheckList,
-        },
-        {
-            title:"vape",
-            img: Vape,
-        },
-        {
-            title:"drugs",
-            img: DrugsIcon,
-        },
         {
             title:"alcohol",
             img: Alcohol,
         },
         {
-            title:"bac",
-            img: BAC,
+            title:"intercourse",
+            img: Heart,
+        },
+        {
+            title:"risk",
+            img: Risk,
+        },
+        {
+            title:"abuse",
+            img: Abuse,
+        },
+        {
+            title:"hiv",
+            img: HIVIcon,
         }
     ];
-    const selected = props.selected ? props.selected : "vape";
+    const selected = props.selected ? props.selected : "alcohol";
         return (
             <>
                 <Bar>
@@ -90,7 +85,7 @@ const SectionDiv = styled.div`
 display: flex;
 align-items: center;
 position: relative;
-width: 20%;
+width: 25%;
 /* ::after{
     content: '';
   position: absolute;
@@ -142,4 +137,4 @@ const Line = styled.span`
     margin-top: -10px;
 `;
 
-export default ProgressBar;
+export default ProgressBar2;

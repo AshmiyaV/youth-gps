@@ -33,7 +33,12 @@ const MIView1 = () => {
         //     img: BAC,
         // }
     ];
-    const [selected, setSelected] = React.useState("bac");
+    const [index, setIndex] = React.useState(0);
+    const [selected, setSelected] = React.useState("vape");
+    const onSectionChange = () => {
+        setSelected(components[index+1].title);
+        setIndex(index+1);
+    };
     return(
         <VapeWrap>
             <Content>     
@@ -42,18 +47,19 @@ const MIView1 = () => {
             </ProgressBarWrap>
             <Form>
                 {components.filter((i) => i.title === selected)[0]?.view}
+                <ButtonWrap>
+                <Button onClick={onSectionChange}>Next <img src={RightArrow} height={30} /></Button>
+            </ButtonWrap>
             </Form>
             </Content> 
-            <div style={{alignSelf: "flex-end"}}>
-            <Button>Next <img src={RightArrow} height={30} /></Button>
-            </div>
         </VapeWrap>
     );
 }
 
 const VapeWrap = styled.article`
 width: 100%;
-height: 100%;
+overflow-y: scroll;
+height: -webkit-fill-available;
 background-color: #D3EEFF;
 display: flex;
     flex-direction: column;
@@ -74,7 +80,7 @@ display: flex;
         /* font-size: 1em; */
         font-size: 22px;
         margin: 0;
-        margin-left: 35px;
+        /* margin-left: 35px; */
     }
     h3{
         /* font-size: 0.8em; */
@@ -104,6 +110,7 @@ display: flex;
 `;
 const Form = styled.section`
 width: 80%;
+position: relative;
 background-color: white;
 margin: 20px 100px;
 padding: 30px;
@@ -119,6 +126,11 @@ display: flex;
         margin-left: 10px;
     }
     padding: 0px 20px;
+`;
+const ButtonWrap = styled.div`
+position: absolute;
+bottom: -50px;
+right: -5px;
 `;
 
 export default MIView1;
