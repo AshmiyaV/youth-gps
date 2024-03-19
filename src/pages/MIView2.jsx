@@ -1,12 +1,13 @@
 import * as React from "react";
 import styled from "styled-components";
-import ProgressBar from "./ProgressBar";
 // import VapeView from "./VapeView";
-import DrugsView from "./DrugsView";
+// import DrugsView from "./DrugsView";
+import { Content } from "./MIView1";
 // import BACView from "./BACView";
 import RightArrow from '../resources/right-arrow.svg';
 import Alcohol2View from "./Alcohol2View";
 import AlcoholIntercourseView from "./AlcoholIntercourseView";
+import ProgressBar2 from "./ProgressBar2";
 
 const MIView2 = () => {
     const components = [
@@ -35,26 +36,33 @@ const MIView2 = () => {
         //     img: BAC,
         // }
     ];
-    const [selected, setSelected] = React.useState("intercourse");
+    const [index, setIndex] = React.useState(0);
+    const [selected, setSelected] = React.useState("alcohol");
+    const onSectionChange = () => {
+        setSelected(components[index+1].title);
+        setIndex(index+1);
+    };
     return(
         <VapeWrap>
-            <div style={{alignItems: "center"}}>     
+            <Content>
             <ProgressBarWrap>
-               <ProgressBar selected={selected} />
+               <ProgressBar2 selected={selected} />
             </ProgressBarWrap>
             <Form>
                 {components.filter((i) => i.title === selected)[0]?.view}
+                <ButtonWrap>
+            <Button onClick={onSectionChange}>Next <img src={RightArrow} height={30} /></Button>
+            </ButtonWrap>
             </Form>
-            </div> 
-            <div style={{    alignSelf: "flex-end"}}>
-            <Button>Next <img src={RightArrow} height={30} /></Button>
-            </div>
+            </Content> 
         </VapeWrap>
     );
 }
 
 const VapeWrap = styled.article`
 width: 100%;
+overflow-y: scroll;
+height: -webkit-fill-available;
 background-color: #D3EEFF;
 display: flex;
     flex-direction: column;
@@ -75,7 +83,7 @@ display: flex;
         /* font-size: 1em; */
         font-size: 22px;
         margin: 0;
-        margin-left: 35px;
+        /* margin-left: 35px; */
     }
     h3{
         /* font-size: 0.8em; */
@@ -101,6 +109,7 @@ display: flex;
 
 const Form = styled.section`
 width: 80%;
+position: relative;
 background-color: white;
 margin: 20px 100px;
 padding: 30px;
@@ -116,6 +125,11 @@ display: flex;
         margin-left: 10px;
     }
     padding: 0px 20px;
+`;
+const ButtonWrap = styled.div`
+position: absolute;
+bottom: -50px;
+right: -5px;
 `;
 
 export default MIView2;

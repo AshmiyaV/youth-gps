@@ -132,7 +132,7 @@ width: 20px;
 height: 20px;
 position: absolute;
     left: -40px;
-    top: 14px;
+    top: 3px;
 border-radius: 50%;
 font-size: 13px;
 color: white;
@@ -146,20 +146,6 @@ span{
 /* margin: -30px; */
 `;
 
-const ProgressBarWrap = styled.section`
-display: flex;
-    justify-content: center;
-    margin: 50px 0 20px 0;
-    width: 100%;
-`;
-
-const Form = styled.section`
-width: 80%;
-background-color: white;
-margin: 20px 100px;
-padding: 30px;
-`;
-
 // const SliderWrap = styled.div`
 //  margin: 25px 0 40px;
 // `;
@@ -168,6 +154,9 @@ const QuestionSection = styled.section`
 position: relative;
     margin: 0;
     padding: 0;
+    h3{
+        line-height: 1.5;
+    }
 `;
 
 export default VapeView;
