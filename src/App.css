@@ -14,7 +14,7 @@
 }
 
 .App-header {
-  background-color: #FFF;
+  /* background-color: #FFF; */
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -40,4 +40,9 @@
 body, html, button{
   font-family: Inknut Antiqua !important;
   color: #3e3e3e;
+  height: 100% !important;
+}
+
+#root{
+  height: 100%;
 }

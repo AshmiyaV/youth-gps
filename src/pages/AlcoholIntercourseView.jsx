@@ -59,7 +59,7 @@ width: 20px;
 height: 20px;
 position: absolute;
     left: -40px;
-    top: 14px;
+    top: 3px;
 border-radius: 50%;
 font-size: 13px;
 color: white;
@@ -124,6 +124,7 @@ position: relative;
     padding: 0;
     h3{
         width: 75%;
+        line-height: 1.5;
     }
 `;
 

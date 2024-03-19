@@ -1,7 +1,7 @@
 import './HomeLoginPage.css'
 import styled from "styled-components";
 // import vectorImage from '../resources/home-page-vector.png'
-import peopleImage from '../resources/homepage-bg.svg'
+import peopleImage from '../resources/homepage-bg.svg';
 import logo from '../resources/logo-new.png'
 // import vectorImage2 from '../resources/home-page-vector2.png'
 import * as React from 'react'
@@ -34,10 +34,10 @@ class HomeLoginPage extends React.Component {
         return (
                 <Home>
                     <div className='MainDiv'>
-                        <div className='images'>
+                        <ImageDiv>
                             {/* <img className='vector1' src={vectorImage} alt="Welcome to Youth GPS"></img> */}
-                            <img className='peopleImage' src={peopleImage} alt="Welcome to Youth GPS"></img>
-                        </div>
+                            {/* <img className='peopleImage' src={peopleImage} alt="Welcome to Youth GPS"></img> */}
+                        </ImageDiv>
                         <div className="textDiv">
                             <img width="50px" height="50px" src={logo}></img>
                             <Welcome>Welcome to Survey</Welcome>
@@ -75,8 +75,11 @@ const Home = styled.article`
     top: 0;
     left: 0;
     width: 100%;
+    height: 100%;
     overflow: hidden;
     .MainDiv{
+        height: 100%;
+        position: relative;
     display: grid; 
     grid-template-columns: 50% 50%; 
     overflow: hidden;
@@ -97,7 +100,7 @@ margin: 20px;
     }
     img{
     overflow:hidden; }
-    @media only screen and (max-width: 768px) {
+    @media only screen and (max-width: 820px) {
   /* For everything bigger than 768px */
   .peopleImage{
     display: none;
@@ -110,6 +113,15 @@ margin: 20px;
 
 const Welcome = styled.h2`
 margin: 0;
+`;
+
+const ImageDiv = styled.div`
+   background-image: url(${peopleImage});
+   background-size: cover;
+      background-position: center;
+    width: 100%; 
+    height: 100%; 
+    /* overflow: hidden; */
 `;
 
 const LoginBtn = styled.button`

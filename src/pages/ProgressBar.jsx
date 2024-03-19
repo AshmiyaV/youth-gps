@@ -50,14 +50,14 @@ const ProgressBar = (props) => {
                     <div style={{height: '4px', backgroundColor: 'white', width: '4%'}}></div> */}
                 {/* </div> */}
                 <Bar>
-                  {sections.map((i) => {
+                  {sections.map((i, index) => {
                    return( <SectionDiv key={i.title}>
                     <ImgWrap className= {classNames({
 		'selected': selected === i.title
 	})}>
                         <img width="80px" height="80px" src={i.img} />
                         </ImgWrap>
-                        <span />
+                        {index !== sections.length - 1 && <Line />}
                     </SectionDiv>)
                   })}
                 </Bar>
@@ -67,11 +67,11 @@ const ProgressBar = (props) => {
 
 const Bar = styled.section`
 display: flex;
-width: 80%;
+width: 85%;
 justify-content: space-between;
 /* :nth-last-child(){ */
     div:last-child{
-        width: 6%;
+        width: fit-content;
         ::after{
         display: none !important;
         }
@@ -82,6 +82,7 @@ justify-content: space-between;
 const ImgWrap = styled.section`
 margin-left: -1px;
 z-index: 1;
+margin-top: 5px;
 /* ::after{
     content: '';
   position: absolute;
@@ -101,17 +102,17 @@ display: flex;
 align-items: center;
 position: relative;
 width: 20%;
-::after{
+/* ::after{
     content: '';
   position: absolute;
   width: 80%;
   height: 10px;
   background-color: white;
-  top: 35px;
-  /* bottom: 0; */
+  top: 50px;
+   bottom: 0;
   margin-left: -1px;
   z-index: -1;
-}
+} */
 /* span{
     display: block;
     width: 100px;
@@ -126,7 +127,9 @@ width: 20%;
         border: 3px solid #333ADB;
         box-shadow: 0px 0px 10px 3px grey;
         border-radius: 50%;
-        ::after{
+        /* margin-right: 10%; */
+        margin-left: -15%;
+        /* ::after{
     content: '';
   position: absolute;
   width: 6px;
@@ -135,9 +138,19 @@ width: 20%;
   bottom: 0;
   left: 50%;
   margin-left: -3px;
-}
+} */
     }
 }
+`;
+const Line = styled.span`
+    height: 10px;
+    display: block;
+    background-color: white;
+    margin-left: -20px;
+    margin-right: -5px;
+    width: 100%;
+    /* padding: -6px; */
+    margin-top: -10px;
 `;
 
 export default ProgressBar;

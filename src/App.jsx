@@ -10,9 +10,9 @@ import MIView2 from './pages/MIView2.jsx';
 
 function App() {
   return (
-    <div className="App">
+    // <div className="App">
       <BrowserRouter>
-        <header className="App-header">
+        {/* <header className="App-header"> */}
           <Routes>
             <Route path='/' element={<HomeLoginPage />} />
             <Route path='/candidateInfo' element={<CandidateInfo />} />
@@ -21,9 +21,9 @@ function App() {
             <Route path='/vape' element={<VapeView />} />
             <Route path='/drug' element={<DrugsView />} />
           </Routes>
-        </header>
+        {/* </header> */}
       </BrowserRouter>
-    </div>
+    // </div>
   );
 }
 

@@ -14,13 +14,15 @@ const BACView = () => {
                         <span>1</span>
                     </QuestionNumber>
                     <DataWrap>
+                        <div style={{width: "120px"}}>
                     <h3>Height</h3>
-                    <div>
+                    </div>
+                    <Data>
                     <input 
                     type="number"
                     />
-                    <span>cm</span>
-                    </div>
+                    <h3>cm</h3>
+                    </Data>
                     </DataWrap>
                     </div>
                 </QuestionSection>
@@ -30,13 +32,15 @@ const BACView = () => {
                         <span>2</span>
                     </QuestionNumber>
                     <DataWrap>
+                    <div style={{width: "120px"}}>
                     <h3>Weight</h3>
-                    <div>
+                    </div>
+                    <Data>
                     <input 
                     type="number"
                     />
-                    <span>kg</span>
-                    </div>
+                    <h3>kg</h3>
+                    </Data>
                          </DataWrap>
                     </div>
                 </QuestionSection>
@@ -64,8 +68,8 @@ span{
 
 const DataWrap = styled.div`
 display: flex;
-width: 350px;
-justify-content: space-between;
+/* width: 350px; */
+/* justify-content: space-between; */
 align-items: center;
 h3{
     /* width: 100px; */
@@ -88,6 +92,18 @@ const QuestionSection = styled.section`
 position: relative;
     margin: 0;
     padding: 0;
+    margin-bottom: 20px;
+    h3{
+        /* line-height: 1.5; */
+    }
+`;
+const Data = styled.div`
+display: flex;
+align-items: center;
+input{
+    margin-right: 7px;
+    font-size: 18px;
+}
 `;
 
 export default BACView;

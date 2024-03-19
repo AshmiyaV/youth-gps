@@ -53,6 +53,7 @@ const MIView1 = () => {
 
 const VapeWrap = styled.article`
 width: 100%;
+height: 100%;
 background-color: #D3EEFF;
 display: flex;
     flex-direction: column;
@@ -96,7 +97,7 @@ display: flex;
     margin: 50px 0 20px 0;
     width: 100%;
 `;
-const Content = styled.div`
+export const Content = styled.div`
 display: flex;
     align-items: center;
     flex-direction: column;

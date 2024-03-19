@@ -2,7 +2,8 @@ import * as React from "react";
 import styled from "styled-components";
 import ProgressBar from "./ProgressBar";
 // import VapeView from "./VapeView";
-import DrugsView from "./DrugsView";
+// import DrugsView from "./DrugsView";
+import { Content } from "./MIView1";
 // import BACView from "./BACView";
 import RightArrow from '../resources/right-arrow.svg';
 import Alcohol2View from "./Alcohol2View";
@@ -35,18 +36,19 @@ const MIView2 = () => {
         //     img: BAC,
         // }
     ];
-    const [selected, setSelected] = React.useState("intercourse");
+    const [selected, setSelected] = React.useState("alcohol");
     return(
         <VapeWrap>
-            <div style={{alignItems: "center"}}>     
+            <Content>
+            {/* <div style={{alignItems: "center"}}>      */}
             <ProgressBarWrap>
                <ProgressBar selected={selected} />
             </ProgressBarWrap>
             <Form>
                 {components.filter((i) => i.title === selected)[0]?.view}
             </Form>
-            </div> 
-            <div style={{    alignSelf: "flex-end"}}>
+            </Content> 
+            <div style={{ alignSelf: "flex-end"}}>
             <Button>Next <img src={RightArrow} height={30} /></Button>
             </div>
         </VapeWrap>
