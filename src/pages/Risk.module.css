@@ -1,0 +1,36 @@
+.container{
+    margin: 40px;
+}
+
+.title{ 
+    
+    font-size: 16px;
+    text-align: left;
+}
+
+.button{
+  margin: '30px auto'
+}
+
+@media (min-width: 576px) and (max-width: 768px){
+    
+  .container{
+    margin: 20px;
+  }
+
+  .title{ 
+      
+      font-size: 14px;
+  }
+}
+
+@media (max-width: 576px) {
+  .container{
+    margin: 10px;
+  }
+
+  .title{ 
+      
+      font-size: 12px;
+  }
+}

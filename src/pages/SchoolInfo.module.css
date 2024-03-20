@@ -1,0 +1,102 @@
+.container{
+    margin: 40px;
+}
+
+.iconsBox{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: 20px;
+    font-size: 14px;
+}
+
+.title{
+    font-size: 16px;
+    text-align: left;
+}
+
+.icon{
+    width: 50px;
+    height: 50px;;
+}
+
+.handcufficon{
+    width: 30px;
+    height: 30px;
+    margin: auto;
+    margin-top: 5px;
+}
+
+
+.progressBar {
+    width: 100%;
+    height: 24px;
+    background-color: #ccc;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: row;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+  
+  .progressBarFill {
+    width: 50%;
+    height: 100%;
+    background-color: #93B3FC;
+    border-radius: 20px;
+  }
+
+  .progressBarCircle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #FFF;
+    position: absolute;
+    right: 49%;
+    margin-top: -10px;;
+    border: 1px solid #93B3FC;
+  }
+
+  .studentImage{
+    width: 100px;
+    height: 100px;
+  }
+
+  @media (min-width: 576px) and (max-width: 768px){
+    
+    .icon{
+        width: 20px;
+        height: 20px;;
+    }
+    .title{
+       font-size: 14px;;
+    }
+
+    .iconsBox{
+        font-size: 10px;;
+    }
+
+    .container{
+        margin: 20px;
+    }
+ }
+ 
+ @media (max-width: 576px) {
+    /* CSS styles specific to small devices */
+    .icon{
+        width: 20px;
+        height: 20px;;
+    }
+    .title{
+       font-size: 12px;;
+    }
+
+    .iconsBox{
+        font-size: 10px;;
+    }
+
+    .container{
+        margin: 10px;
+    }
+ }

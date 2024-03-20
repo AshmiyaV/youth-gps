@@ -1,0 +1,59 @@
+.container{
+    margin: 20px;
+}
+
+.title{ 
+    
+    font-size: 16px;
+    text-align: left;
+}
+
+
+
+@media(max-width: 768px){
+    
+    .container{
+      margin: 20px;
+    }
+  
+    .title{ 
+        
+        font-size: 14px;
+    }
+  
+    .optionBox{
+      width: 100%;
+    }
+  
+    .questionDiv{
+      width: 100%;
+    }
+  
+    .selectDiv{
+      width: 90%;
+      margin: auto;
+    }
+  
+    .firstQuestionDiv{
+      width: 100%;
+    }
+  
+    .select{
+      width: 100%;
+      margin: 0;
+    }
+  
+  
+  }
+  
+  
+  
+  @media (max-width: 576px) {
+    .container{
+      margin: 10px;
+    }
+  
+    .title{ 
+        font-size: 12px;
+    }
+  }
