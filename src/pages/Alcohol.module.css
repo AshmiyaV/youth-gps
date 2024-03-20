@@ -8,6 +8,42 @@
     text-align: left;
 }
 
+.handcufficon{
+    width: 30px;
+    height: 30px;
+    margin: auto;
+    margin-top: 5px;
+}
+
+
+.progressBar {
+    width: 100%;
+    height: 24px;
+    background-color: #ccc;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: row;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+  
+  .progressBarFill {
+    width: 50%;
+    height: 100%;
+    background-color: #93B3FC;
+    border-radius: 20px;
+  }
+
+  .progressBarCircle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #FFF;
+    position: absolute;
+    right: 49%;
+    margin-top: -10px;;
+    border: 1px solid #93B3FC;
+  }
 
 
 @media(max-width: 768px){

@@ -3,16 +3,9 @@ import alcohol_styles from './Alcohol.module.css';
 import PageLayout from "../components/PageLayout";
 import styled from 'styled-components';
 import NextButton from "../components/NextButton";
-import SliderComponent from "../components/SliderComp";
-import agree_img from '../resources/agree.svg';
-import disagree_img from '../resources/disagree.svg';
-import strongly_disagree_img from '../resources/completely_disagree.svg';
-import strongly_agree_img from '../resources/strongly_agree.svg';
+import HandCuffs from "../resources/Handcuffs.svg";
 
-import grey_agree_img from '../resources/grey_agree.svg';
-import grey_disagree_img from '../resources/grey_disagree.svg';
-import grey_strongly_disagree_img from '../resources/grey_strong_disagree.svg';
-import grey_strongly_agree_img from '../resources/grey_strongly_agree.svg';
+// import SliderComponent from "../components/SliderComp";
 
 const FlexBox = styled.div`
     display: flex;
@@ -53,16 +46,16 @@ const Alcohol = (props) => {
                 {questions.map((question, index) => (
                     <div key={index}>
                         <div className={alcohol_styles.title}>{question}</div>
-                        <div className={alcohol_styles.answer}>
+                        {/* <div className={alcohol_styles.answer}>
                           <SliderComponent handleAnswerChange={handleAnswerChange} index={index} answer={answers[index]}></SliderComponent>
-                         </div>
+                         </div> */}
 
-                        {/* <div className={schoolInfo_styles.progressBar}>
-                            <div className={schoolInfo_styles.progressBarFill} style={{ width: '50%' }}></div>
-                            <div className={schoolInfo_styles.progressBarCircle}>
-                                <img src={HandCuffs} className={schoolInfo_styles.handcufficon} />
+                        <div className={alcohol_styles.progressBar}>
+                            <div className={alcohol_styles.progressBarFill} style={{ width: '50%' }}></div>
+                            <div className={alcohol_styles.progressBarCircle}>
+                                <img src={HandCuffs} className={alcohol_styles.handcufficon} />
                             </div>
-                        </div> */}
+                        </div>
                     </div>
                 ))}
             </div>
