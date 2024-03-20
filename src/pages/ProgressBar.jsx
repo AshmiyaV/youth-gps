@@ -7,6 +7,8 @@ import Vape from '../resources/vape.svg';
 import DrugsIcon from '../resources/drugsIcon.svg';
 import Alcohol from '../resources/alcohol.svg';
 import BAC from '../resources/bac.svg';
+import logo from '../resources/logo-new3.png';
+
 
 const ProgressBar = (props) => {
     const sections = [
@@ -38,6 +40,14 @@ const ProgressBar = (props) => {
     const selected = props.selected ? props.selected : "vape";
         return (
             <>
+            <div style={{display: 'grid', gridTemplateColumns: '50% 50%', padding: '15px'}}>
+                    <div style={{alignItems: 'left'}}>
+                        <img style={{float: 'left', marginLeft: '0',width: '14%'}} src={logo} ></img>
+                    </div>
+                    <div style={{fontSize: '16px', color: 'black', textAlign: 'right', fontFamily: 'Inder'}}>
+                        Hi, Student Name
+                    </div>
+                </div>
                 <Bar>
                   {sections.map((i, index) => {
                    return( <SectionDiv key={i.title}>
@@ -58,6 +68,7 @@ const Bar = styled.section`
 display: flex;
 width: 85%;
 justify-content: space-between;
+margin: auto;
 /* :nth-last-child(){ */
     div:last-child{
         width: fit-content;
