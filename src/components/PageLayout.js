@@ -1,6 +1,6 @@
 import React from "react";
 import colors from "../constants";
-import ProgressBar from "./ProgressBar";
+import ProgressBar from "../pages/ProgressBar";
 import styled from 'styled-components';
 
 const BackgroundDiv = styled.div`
