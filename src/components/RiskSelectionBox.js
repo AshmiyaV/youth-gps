@@ -46,6 +46,7 @@ const AnswerBox = styled.div`
 const Text = styled.p`
     margin: 13px auto;
     font-size: 14px;
+    text-align: center;
 
     @media (min-width: 576px) and (max-width: 768px){
         margin: 8px auto;

@@ -11,12 +11,14 @@ const Button = styled.button`
     color: #FFF;
     font-size: 12px;
     font-family: Inknut Antiqua;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 `
 
 const NextButton = (props) => (
-    <div>
-    <Button>Next Section</Button>
-    </div>
+        <Button>Next Section</Button>
 )
 
 export default NextButton;

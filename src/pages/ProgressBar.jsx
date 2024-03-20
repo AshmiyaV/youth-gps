@@ -40,7 +40,7 @@ const ProgressBar = (props) => {
     const selected = props.selected ? props.selected : "vape";
         return (
             <>
-            <div style={{display: 'grid', gridTemplateColumns: '50% 50%', padding: '15px'}}>
+            <div style={{display: 'grid', gridTemplateColumns: '50% 50%'}}>
                     <div style={{alignItems: 'left'}}>
                         <img style={{float: 'left', marginLeft: '0',width: '14%'}} src={logo} ></img>
                     </div>

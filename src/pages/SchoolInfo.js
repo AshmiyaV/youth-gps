@@ -27,15 +27,15 @@ const SchoolInfo_QA = (props) => (
         <div className={schoolInfo_styles.iconsBox}>
             <div onClick={()=> props.onAnswer(1)}>
                 <img src={props.answer == 0 || props.answer == 98 ? YesCheckmarkGrey : YesCheckmark} className={schoolInfo_styles.icon} />
-                <div>Yes</div>
+                <div style={{textAlign: 'center'}}>Yes</div>
             </div>
             <div onClick={()=> props.onAnswer(0)}>
                 <img src={props.answer == 1 || props.answer == 98 ? NoCheckmarkGrey : NoCheckmark} className={schoolInfo_styles.icon} />
-                <div>No</div>
+                <div style={{textAlign: 'center'}}>No</div>
             </div>
             <div onClick={()=> props.onAnswer(98)}>
                 <img src={props.answer == 1 || props.answer == 0 ? NoAnswerGrey : NoAnswer} className={schoolInfo_styles.icon} />
-                <div>I do not wish to answer</div>
+                <div style={{textAlign: 'left', marginLeft: '-30px'}}>I do not wish to answer</div>
             </div>
         </div>
     </FlexBox>
@@ -60,7 +60,7 @@ const SchoolInfo = (props) => {
 
     console.log(answers);
     return (<>
-        <PageLayout>
+        <PageLayout selected="checklist">
             <div className={schoolInfo_styles.container}>
                 <SchoolInfo_QA question={questions[0]} answer={answers[0]} onAnswer={answer => onAnswerChange(answer, 0)}></SchoolInfo_QA>
                 <FlexBox>

@@ -8,6 +8,8 @@ import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import armedForcesImage from "../resources/armed_forces.png";
 import student_image from "../resources/canva-student.png";
+import User from '../resources/user.svg';
+
 
 const FlexBox = styled.div`
     display: flex;
@@ -19,6 +21,7 @@ const FlexBox = styled.div`
 
 const CalendarDiv = styled.div`
   display: flex;
+  margin-top: 10px;
 
   @media (min-width: 576px) and (max-width: 768px){
     width: 30%;
@@ -93,67 +96,47 @@ const CandidateInfo = (props) => {
         5: 'More than $70,000',
         98: 'No Response/Invalid Data'
     }
-
-    const homeOptionSelected = (key) => {
-        console.log(key);
-        setHomeOption(key);
-        setShowHomeOptions(false);
-    }
-
-    const liveWithOptionSelected = (key) => {
-        console.log(key);
-        setHomeOption(key);
-        setLiveWithOption(false);
-    }
-
-    useEffect(() => {
-        function handleClickOutside(event) {
-          if (showHomeOptions || showLiveWithOptions) {
-            setShowHomeOptions(false);
-            setShowLiveWithOptions(false);
-          }
-        }
-        document.addEventListener('click', handleClickOutside);
-
-        return () => {
-            document.removeEventListener('click', handleClickOutside);
-        };
-    }, []);
     
-
-    console.log(homeOption);
-    console.log(liveOption);
-    console.log(selectedDate);
-
     return (<>
-        <PageLayout backdropImage={student_image}>
-            <FlexBox style={{marginRight: '5px'}}>
-                <div className={candidateInfo_styles.birthdateDiv}>
-                What is your date of birth? 
-                </div>
-                <CalendarDiv>
-                    <CustomDatePicker 
-                        ref = {dateInputRef} 
-                        dateFormat="MM/dd/yyyy"
-                        selected={selectedDate} 
-                        placeholderText="MM/DD/YYYY" 
-                        onChange={date => setSelectedDate(date)}
-                        popperPlacement="bottom-end" 
-                        maxDate={new Date()}
-                        minDate={new Date('1900-01-01')}
-                        showMonthDropdown
-                        showYearDropdown
+        <PageLayout selected={"basic_info"}>
+            <FlexBox style={{marginRight: '5px', justifyContent: 'space-between'}}>
+                
+                <div>
+                    <p className={candidateInfo_styles.birthdateDiv} style={{margin: '20px 0 20px 0', fontSize: '16px', fontWeight: '600'}}>Hi, John Doe, Tell Us About You and Your living situation  </p>
+                    <FlexBox style={{justifyContent: 'space-between', alignItems: 'center', margin: '0'}}>
+                        <div className={candidateInfo_styles.birthdateDiv} style={{marginTop: '10px'}}>
+                            What is your date of birth? 
+                        </div>
+                        <CalendarDiv>
+                            <CustomDatePicker 
+                                ref = {dateInputRef} 
+                                dateFormat="MM/dd/yyyy"
+                                selected={selectedDate} 
+                                placeholderText="MM/DD/YYYY" 
+                                onChange={date => setSelectedDate(date)}
+                                popperPlacement="bottom-end" 
+                                maxDate={new Date()}
+                                minDate={new Date('1900-01-01')}
+                                showMonthDropdown
+                                showYearDropdown
 
-                        />
-                    <img className={candidateInfo_styles.calendarImage}
-                        onClick={()=>openDateInput()}  src={calendar} alt="calendar" />
-                </CalendarDiv>
+                                />
+                            <img className={candidateInfo_styles.calendarImage}
+                                onClick={()=>openDateInput()}  src={calendar} alt="calendar" />
+                        </CalendarDiv>
+                    </FlexBox>
+                </div>
+
+                <div style={{width: '30%'}}>
+                    <img style={{width: '100%', height: '250px', borderRadius: '50%'}} src={User}></img>
+                </div>
+                
             </FlexBox>
             <div className={candidateInfo_styles.stayDiv}>
                 <div className={candidateInfo_styles.stayText}>Describe where you live </div>
-                <div style={{height: '100%'}}>
+                <div id="selectDiv1" style={{height: '100%'}}>
                     <div className={candidateInfo_styles.triangle}></div>
-                    <select selected={homeOption} onChange={(e)=>setHomeOption(e.target.value)} className={candidateInfo_styles.selectBox}>
+                    <select style={{marginTop: '5px'}} id="selectBox1" selected={homeOption} onChange={(e)=>setHomeOption(e.target.value)} className={candidateInfo_styles.selectBox}>
                         <option value="" selected></option>
                         {Object.keys(homeOptions).map(key =>(
                             <option style={{width: '100%', margin: '20px'}} value={key}>{homeOptions[key]}</option>
@@ -169,7 +152,7 @@ const CandidateInfo = (props) => {
                 <div style={{height: '100%'}}>
                     <div className={candidateInfo_styles.triangle}></div>
                     
-                    <select selected={liveOption} onChange={(e)=>setLiveWithOption(e.target.value)} className={candidateInfo_styles.selectBox}>
+                    <select style={{marginTop: '5px'}} selected={liveOption} onChange={(e)=>setLiveWithOption(e.target.value)} className={candidateInfo_styles.selectBox}>
                         <option value="" selected></option>
                         {Object.keys(liveWithOptions).map(key =>(
                             <option style={{width: '100%', margin: '20px'}} value={key}>{liveWithOptions[key]}</option>

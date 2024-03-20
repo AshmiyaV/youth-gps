@@ -3,9 +3,9 @@ import alcohol_styles from './Alcohol.module.css';
 import PageLayout from "../components/PageLayout";
 import styled from 'styled-components';
 import NextButton from "../components/NextButton";
-import HandCuffs from "../resources/Handcuffs.svg";
+import alcoholIcon from "../resources/alcohol.svg";
 
-// import SliderComponent from "../components/SliderComp";
+import SliderComponent from "./SliderComp";
 
 const FlexBox = styled.div`
     display: flex;
@@ -46,16 +46,16 @@ const Alcohol = (props) => {
                 {questions.map((question, index) => (
                     <div key={index}>
                         <div className={alcohol_styles.title}>{question}</div>
-                        {/* <div className={alcohol_styles.answer}>
-                          <SliderComponent handleAnswerChange={handleAnswerChange} index={index} answer={answers[index]}></SliderComponent>
-                         </div> */}
+                        <div className={alcohol_styles.answer}>
+                          <SliderComponent icon={alcoholIcon} handleAnswerChange={handleAnswerChange} index={index} answer={answers[index]}></SliderComponent>
+                         </div>
 
-                        <div className={alcohol_styles.progressBar}>
+                        {/* <div className={alcohol_styles.progressBar}>
                             <div className={alcohol_styles.progressBarFill} style={{ width: '50%' }}></div>
                             <div className={alcohol_styles.progressBarCircle}>
                                 <img src={HandCuffs} className={alcohol_styles.handcufficon} />
                             </div>
-                        </div>
+                        </div> */}
                     </div>
                 ))}
             </div>

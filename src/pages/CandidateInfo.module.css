@@ -11,6 +11,7 @@
 .birthdateDiv{
     font-size: 16px;
     text-align: left;
+    margin-top: 0;
 }
 
 .calendarDiv{
@@ -33,11 +34,11 @@
     border:1px solid #93B3FC;
     border-radius: 6px;
     height: 50px;
-    margin: 20px 5px;
+    margin: 20px 5px 30px 5px;
 }
 
 .stayText{
-    margin-top: -10px; 
+    margin-top: -14px; 
     margin-left:10px; 
     float:left; 
     font-size: 16px; 
@@ -151,7 +152,7 @@
   -moz-appearance: none;
    width: -webkit-fill-available;
    appearance: none;
-   height: 35px;
+   height: 22px;
    margin: auto 15px;
    color: #93B3FC;
    background-blend-mode: hue;
@@ -208,7 +209,7 @@
 
  @keyframes moveRightToLeft {
    0% { right: 0; }
-  100% { right: calc(100% - 0px)};
+  100% { right: calc(100% - 10px)};
  }
 
  @media (min-width: 576px) and (max-width: 768px){

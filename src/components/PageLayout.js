@@ -5,8 +5,9 @@ import styled from 'styled-components';
 
 const BackgroundDiv = styled.div`
     background-color: ${colors.background};
-    min-height: 100vh;
-    width: 100%;
+    min-height: 100vh !important;
+    ${'' /* width: 100%; */}
+    padding: 30px;
 `
 
 const MainDiv = styled.div`
@@ -32,7 +33,7 @@ const MainDiv = styled.div`
 
 const PageLayout = (props) => (
     <BackgroundDiv>
-        <ProgressBar />
+        <ProgressBar selected={props.selected} />
             <MainDiv>
                 {props.children}            
             </MainDiv>        
