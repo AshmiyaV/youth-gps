@@ -1,16 +1,11 @@
-.Home{
+/* .Home{
     text-align: center;
     color: black;
     position: relative;
     top: 0;
     left: 0;
     width: 100%;
-}
-
-.MainDiv{
-    display: grid; 
-    grid-template-columns: 50% 50%; 
-}
+} */
 
 .vector1{
     float: left;
@@ -30,25 +25,22 @@
     position: absolute;
 }
 
-.peopleImage{
-    position: absolute;
-    float: left;
-    width: 50%;
-    height: 100vh;
-    top: 10px;
-    left: 20px;
-}
-
 .images{
-    top: 0;
-    left: 0;
-    flex: 50%;
+    /* top: 0; */
+    /* left: 0; */
+    /* flex: 50%; */
+    /* overflow-x:hidden; */
+    /* background-image: url(pe); */
+    width: 100%; 
+    height: 100vh; 
+    overflow: hidden;
 }
 
 .textDiv{
     text-align: center;
     margin: auto;
     font-family: Inknut Antiqua;
+    align-self: center;
 }
 
 .logoImage{
