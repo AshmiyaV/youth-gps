@@ -22,7 +22,7 @@ const SliderComp = (props) => {
     return(
         <SliderWrap>
         <Slider
-                defaultValue={20}
+                defaultValue={0}
                 min={0}
                 max={30}
                 styles={{

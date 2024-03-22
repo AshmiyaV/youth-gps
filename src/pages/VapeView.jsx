@@ -1,6 +1,5 @@
 import * as React from "react";
 import styled from "styled-components";
-import ProgressBar from "./ProgressBar";
 // import Slider from "rc-slider";
 import "rc-slider/assets/index.css";
 import VapeSlider from '../resources/vape_slider.svg';

@@ -20,20 +20,16 @@ const MIView2 = () => {
             view: <AlcoholIntercourseView />,
         },
         // {
-        //     title:"bac",
+        //     title:"risk",
         //     view: <BACView />,
         // },
         // {
-        //     title:"drugs",
+        //     title:"abuse",
         //     img: DrugsIcon,
         // },
         // {
-        //     title:"alcohol",
+        //     title:"hiv",
         //     img: Alcohol,
-        // },
-        // {
-        //     title:"bac",
-        //     img: BAC,
         // }
     ];
     const [index, setIndex] = React.useState(0);
@@ -116,6 +112,7 @@ padding: 30px;
 `;
 const Button = styled.button`
 background-color: #333ADB;
+cursor: pointer;
 border: none;
 border-radius: 25px;
 color: white;

@@ -117,6 +117,7 @@ padding: 30px;
 `;
 const Button = styled.button`
 background-color: #333ADB;
+cursor: pointer;
 border: none;
 border-radius: 25px;
 color: white;
