@@ -34,31 +34,6 @@ const VapeView = () => {
                     </div>
                     <p>By electronic vapor products we mean Vapes, vaporizers, vape pens, hookah pens, electronic cigarettes (e-cigarettes or e-cigs), e-pipes, or electronic nicotine delivery systems (ENDS).</p>
                     <SliderComp icon={VapeSlider} />
-                    {/* <SliderWrap>
-<Slider
-        defaultValue={20}
-        min={0}
-        max={100}
-        // width= {80}
-        trackStyle={{ backgroundColor: "#333ADB", height: 30, borderRadius: 50 }}
-        railStyle={{ backgroundColor: "#EBEBED", height: 30, borderRadius: 50 }}
-        handleStyle={{
-          borderColor: "#333ADB",
-          height: 50,
-          width: 50,
-          marginLeft: -10,
-          marginTop: -10,
-        //   borderRadius: 50,
-        //   backgroundColor: "#FFFFFF"
-        backgroundImage: `url(${VapeSlider})`,
-        backgroundPosition: 'center',
-        backgroundSize: "40px 40px",
-        backgroundRepeat: 'no-repeat',
-        opacity: "100%",
-        // background: "center"
-        }}
-      />
-      </SliderWrap> */}
                 </QuestionSection>
                 <QuestionSection>
                     <div>
@@ -86,22 +61,6 @@ const VapeView = () => {
 }
 
 export const VapeWrap = styled.article`
-/* width: 100%;
-background-color: #D3EEFF;
-display: flex;
-    flex-direction: column;
-    align-items: center; */
-    .rc-slider{
-        /* width: 70%; */
-    }
-    .rc-slider-handle{
-        &:focus{ 
-              /* border: none !important; */
-           outline: black;
-           /* box-shadow: none; */
-        }
-            /* background-color: black; */
-    }
     h2{
         /* font-size: 1em; */
         font-size: 22px;
@@ -123,6 +82,19 @@ display: flex;
         /* padding: 5px 0; */
         line-height: 25px;
     }
+    @media only screen and (max-width: 700px) {
+        h2{
+            font-size: 13px !important;
+        }
+        h3{
+            font-size: 10px !important;
+            line-height: 17px !important;
+        }
+        p{
+            font-size: 8px !important;
+            line-height: 13px !important;
+        }
+    }
 `;
 
 const QuestionNumber = styled.div`
@@ -138,6 +110,13 @@ color: white;
 display: flex;
 /* place-items: center; */
 justify-content: center;
+@media only screen and (max-width: 700px) {
+    width: 13px;
+    height: 13px;
+    font-size: 9px;
+    top: 1px;
+    left: -22px;
+}
 span{
     align-self: center;
     margin-bottom: 3px;
