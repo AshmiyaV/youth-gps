@@ -43,6 +43,7 @@ const Alcohol2View = () => {
     return(
         <VapeWrap>      
                 <h2>Alcohol</h2>
+                <h3>In the last month,</h3>
                 {/* <h3>In order for us to calculate you blood Alcohol Concentration please give your best estimate of your height and weight.</h3> */}
                 {questions.map((i, index) => {
                     return(
@@ -62,90 +63,6 @@ const Alcohol2View = () => {
                     </QuestionSection>
                     )
                 })}
-                {/* <QuestionSection>
-                    <div>
-                    <QuestionNumber>
-                        <span>1</span>
-                    </QuestionNumber>
-                    <DataWrap>
-                    <h3>While drinking, I have said or done embarrassing things.</h3>
-                    <div>
-                   <img src={true ? TickFilled : Tick} width={40} height={40} />
-                   <img src={true ? Cross : CrossFilled} width={35} height={35} />
-                    </div>
-                    </DataWrap>
-                    </div>
-                </QuestionSection>
-                <QuestionSection>
-                    <div>
-                    <QuestionNumber>
-                        <span>2</span>
-                    </QuestionNumber>
-                    <DataWrap>
-                    <h3>I have had a hangover (headache, sick stomach) the morning after I had been drinking.</h3>
-                    <div>
-                    <img src={true ? TickFilled : Tick} width={40} height={40} />
-                   <img src={true ? Cross : CrossFilled} width={35} height={35} />
-                    </div>
-                    </DataWrap>
-                    </div>
-                </QuestionSection>
-                <QuestionSection>
-                    <div>
-                    <QuestionNumber>
-                        <span>3</span>
-                    </QuestionNumber>
-                    <DataWrap>
-                    <h3>I have felt very sick to my stomach or thrown up after drinking.</h3>
-                    <div>
-                    <img src={true ? TickFilled : Tick} width={40} height={40} />
-                   <img src={true ? Cross : CrossFilled} width={35} height={35} />
-                    </div>
-                    </DataWrap>
-                    </div>
-                </QuestionSection>
-                <QuestionSection>
-                    <div>
-                    <QuestionNumber>
-                        <span>4</span>
-                    </QuestionNumber>
-                    <DataWrap>
-                    <h3>I often have ended up drinking on nights when I had planned not to drink.</h3>
-                    <div>
-                    <img src={true ? TickFilled : Tick} width={40} height={40} />
-                   <img src={true ? Cross : CrossFilled} width={35} height={35} />
-                    </div>
-                    </DataWrap>
-                    </div>
-                </QuestionSection>
-                <QuestionSection>
-                    <div>
-                    <QuestionNumber>
-                        <span>5</span>
-                    </QuestionNumber>
-                    <DataWrap>
-                    <h3>I have taken foolish risks when I have been drinking.</h3>
-                    <div>
-                    <img src={true ? TickFilled : Tick} width={40} height={40} />
-                   <img src={true ? Cross : CrossFilled} width={35} height={35} />
-                    </div>
-                    </DataWrap>
-                    </div>
-                </QuestionSection>
-                <QuestionSection>
-                    <div>
-                    <QuestionNumber>
-                        <span>6</span>
-                    </QuestionNumber>
-                    <DataWrap>
-                    <h3>I have passed out from drinking.</h3>
-                    <div>
-                    <img src={true ? TickFilled : Tick} width={40} height={40} />
-                   <img src={true ? Cross : CrossFilled} width={35} height={35} />
-                    </div>
-                    </DataWrap>
-                    </div>
-                </QuestionSection> */}
         </VapeWrap>
     );
 }
