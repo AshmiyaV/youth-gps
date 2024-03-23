@@ -1,7 +1,7 @@
 import * as React from "react";
 import styled from "styled-components";
 import "rc-slider/assets/index.css";
-import { VapeWrap } from "./VapeView";
+import { VapeWrap, QuestionNumber as BaseQuestionNumber } from "./VapeView";
 
 const BACView = () => {
     return(
@@ -14,9 +14,9 @@ const BACView = () => {
                         <span>1</span>
                     </QuestionNumber>
                     <DataWrap>
-                        <div style={{width: "120px"}}>
+                        <Label>
                     <h3>Height</h3>
-                    </div>
+                    </Label>
                     <Data>
                     <input 
                     type="number"
@@ -32,9 +32,9 @@ const BACView = () => {
                         <span>2</span>
                     </QuestionNumber>
                     <DataWrap>
-                    <div style={{width: "120px"}}>
+                    <Label>
                     <h3>Weight</h3>
-                    </div>
+                    </Label>
                     <Data>
                     <input 
                     type="number"
@@ -48,21 +48,17 @@ const BACView = () => {
     );
 }
 
-const QuestionNumber = styled.div`
-background-color: #4D71E5;
-width: 20px;
-height: 20px;
-position: absolute;
-    left: -40px;
-    top: 14px;
-border-radius: 50%;
-font-size: 13px;
-color: white;
-display: flex;
-justify-content: center;
-span{
-    align-self: center;
-    margin-bottom: 3px;
+const QuestionNumber = styled(BaseQuestionNumber)`
+top: 14px;
+@media only screen and (max-width: 700px) {
+    top: 4px;
+}
+`;
+
+const Label = styled.div`
+width: 120px;
+@media only screen and (max-width: 700px) {
+    width: 80px;
 }
 `;
 
@@ -86,6 +82,12 @@ input{
 span{
         margin-left: 10px;
     }
+    @media only screen and (max-width: 700px) {
+        input{
+            width: 80px;
+        height: 15px;
+        }
+    }
 `;
 
 const QuestionSection = styled.section`
@@ -93,8 +95,9 @@ position: relative;
     margin: 0;
     padding: 0;
     margin-bottom: 20px;
-    h3{
-        /* line-height: 1.5; */
+    @media only screen and (max-width: 700px) {
+        margin-top: 10px;
+        margin-bottom: 0px;
     }
 `;
 const Data = styled.div`

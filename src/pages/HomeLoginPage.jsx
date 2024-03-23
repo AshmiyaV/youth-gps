@@ -2,7 +2,7 @@ import './HomeLoginPage.css'
 import styled from "styled-components";
 // import vectorImage from '../resources/home-page-vector.png'
 import peopleImage from '../resources/homepage-bg.svg';
-import logo from '../resources/logo-new.png'
+import logo from '../resources/logo.svg'
 // import vectorImage2 from '../resources/home-page-vector2.png'
 import * as React from 'react';
 import { useNavigate } from 'react-router-dom';
@@ -60,7 +60,7 @@ import 'react-toastify/dist/ReactToastify.css';
                             {/* <img className='peopleImage' src={peopleImage} alt="Welcome to Youth GPS"></img> */}
                         </ImageDiv>
                         <div className="textDiv">
-                            <img width="50px" height="50px" src={logo}></img>
+                            <img width="150px" height="60px" src={logo}></img>
                             <Welcome>Welcome to Survey</Welcome>
                             <p>
                                 This survey will ask questions about your alcohol and tobacco use and provide you personalized feedback on your drinking. It will take approximately 10 minutes to complete.
