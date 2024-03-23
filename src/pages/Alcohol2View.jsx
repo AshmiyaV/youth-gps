@@ -44,7 +44,6 @@ const Alcohol2View = () => {
         <VapeWrap>      
                 <h2>Alcohol</h2>
                 <h3>In the last month,</h3>
-                {/* <h3>In order for us to calculate you blood Alcohol Concentration please give your best estimate of your height and weight.</h3> */}
                 {questions.map((i, index) => {
                     return(
                         <QuestionSection>
@@ -87,7 +86,6 @@ span{
 
 const DataWrap = styled.div`
 display: flex;
-/* width: 350px; */
 justify-content: space-between;
 align-items: center;
 div{

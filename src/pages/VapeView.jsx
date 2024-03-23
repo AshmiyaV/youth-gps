@@ -62,24 +62,17 @@ const VapeView = () => {
 
 export const VapeWrap = styled.article`
     h2{
-        /* font-size: 1em; */
         font-size: 22px;
         margin: 0;
-        /* margin-left: 35px; */
     }
     h3{
-        /* font-size: 0.8em; */
         font-size: 18px;
         margin: 0;
         font-weight: normal;
-        /* padding: 5px 0; */
-        /* line-height: 0; */
     }
     p{
-        /* font-size: 0.6em; */
         font-size: 14px;
         margin: 0;
-        /* padding: 5px 0; */
         line-height: 25px;
     }
     @media only screen and (max-width: 700px) {
@@ -108,7 +101,6 @@ border-radius: 50%;
 font-size: 13px;
 color: white;
 display: flex;
-/* place-items: center; */
 justify-content: center;
 @media only screen and (max-width: 700px) {
     width: 13px;
@@ -121,12 +113,7 @@ span{
     align-self: center;
     margin-bottom: 3px;
 }
-/* margin: -30px; */
 `;
-
-// const SliderWrap = styled.div`
-//  margin: 25px 0 40px;
-// `;
 
 const QuestionSection = styled.section`
 position: relative;
