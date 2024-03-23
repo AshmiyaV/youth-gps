@@ -76,7 +76,7 @@ export const VapeWrap = styled.article`
     }
 `;
 
-const QuestionNumber = styled.div`
+export const QuestionNumber = styled.div`
 background-color: #4D71E5;
 width: 20px;
 height: 20px;
@@ -101,7 +101,7 @@ span{
 }
 `;
 
-const QuestionSection = styled.section`
+export const QuestionSection = styled.section`
 position: relative;
     margin: 0;
     padding: 0;

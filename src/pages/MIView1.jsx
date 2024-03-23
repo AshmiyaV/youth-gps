@@ -117,7 +117,7 @@ padding: 30px;
 @media only screen and (max-width: 700px) {
       width: 85%;
       margin: 0px;
-      padding: 10px 15px;
+      padding: 10px 15px 20px;
     }
 `;
 const Button = styled.button`
