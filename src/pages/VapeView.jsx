@@ -1,28 +1,14 @@
 import * as React from "react";
 import styled from "styled-components";
-// import Slider from "rc-slider";
 import "rc-slider/assets/index.css";
 import VapeSlider from '../resources/vape_slider.svg';
 import Cigarrette from '../resources/cigarrete.svg';
 import Marijuana from '../resources/marijuana.svg';
 import SliderComp from "./SliderComp";
-// import {Label, Slider, SliderOutput, SliderThumb, SliderTrack} from 'react-aria-components';
 
 const VapeView = () => {
     return(
         <VapeWrap>      
-            {/* <ProgressBarWrap>
-               <ProgressBar />
-            </ProgressBarWrap> */}
-            {/* <Slider defaultValue={50}>
-  <Label>Opacity</Label>
-  <SliderOutput />
-  <SliderTrack>
-    <SliderThumb name="opacity" />
-  </SliderTrack>
-</Slider> */}
-
-            {/* <Form> */}
                 <h2>Vape/Smoke</h2>
                 <h3>Over the past 30 days, how many days, if any, did you…</h3>
                 <QuestionSection>
