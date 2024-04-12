@@ -101,7 +101,7 @@ width: 20%;
     img{
         width: 100px;
         height: 100px;
-        border: 3px solid #333ADB;
+        border: 3px solid #025dc7;
         box-shadow: 0px 0px 10px 3px grey;
         border-radius: 50%;
         /* margin-right: 10%; */

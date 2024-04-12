@@ -7,6 +7,8 @@ import {BrowserRouter, Routes, Route} from 'react-router-dom';
 // import DrugsView from './pages/DrugsView.jsx';
 import MIView1 from './pages/MIView1.jsx';
 import MIView2 from './pages/MIView2.jsx';
+import MIMetrics1 from './pages/MIMetrics1.jsx';
+import MIMetrics2 from './pages/MIMetrics2.jsx';
 
 function App() {
   return (
@@ -18,6 +20,8 @@ function App() {
             <Route path='/candidateInfo' element={<CandidateInfo />} />
             <Route path='/MI' element={<MIView1 />} />
             <Route path='/MI2' element={<MIView2 />} />
+            <Route path='/MI/Metrics' element={<MIMetrics1 />} />
+            <Route path='/MI2/Metrics' element={<MIMetrics2 />} />
             {/* <Route path='/vape' element={<VapeView />} />
             <Route path='/drug' element={<DrugsView />} /> */}
           </Routes>
