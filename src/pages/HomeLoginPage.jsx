@@ -2,7 +2,7 @@ import './HomeLoginPage.css'
 import styled from "styled-components";
 // import vectorImage from '../resources/home-page-vector.png'
 import peopleImage from '../resources/homepage-bg.svg';
-import logo from '../resources/logo.svg'
+import logo from '../resources/logo.svg';
 // import vectorImage2 from '../resources/home-page-vector2.png'
 import * as React from 'react';
 import { useNavigate } from 'react-router-dom';
@@ -61,6 +61,7 @@ import 'react-toastify/dist/ReactToastify.css';
                         </ImageDiv>
                         <div className="textDiv">
                             <img width="150px" height="60px" src={logo}></img>
+                            <InnerDiv>
                             <Welcome>Welcome to Survey</Welcome>
                             <p>
                                 This survey will ask questions about your alcohol and tobacco use and provide you personalized feedback on your drinking. It will take approximately 10 minutes to complete.
@@ -80,8 +81,9 @@ import 'react-toastify/dist/ReactToastify.css';
                                 {/* <img className='vector2' src={vectorImage2} alt="Welcome to Youth GPS"></img> */}
                             </div>
                             <Admin>
-                                <span>Are you an admin?</span><span className='admin'>Login Here</span>
+                                {/* <span>Are you an admin?</span><span className='admin'>Login Here</span> */}
                             </Admin>
+                            </InnerDiv>
                         </div>
                     </div>
                 </Home>
@@ -121,15 +123,40 @@ margin: 20px;
     }
     img{
     overflow:hidden; }
-    @media only screen and (max-width: 820px) {
+    @media only screen and (max-width: 820px), screen and (max-aspect-ratio: 1/1) {
   /* For everything bigger than 768px */
   .peopleImage{
     display: none;
   }
   .MainDiv{
     grid-template-columns: 0 100%; 
+    background-color: #D3EEFF;
+    overflow-y: scroll;
+  }
+  .textDiv{
+    align-self: unset;
+   img{
+    width: 100px;
+    height: 40px;
+   }
   }
 }
+`;
+
+const InnerDiv = styled.div`
+   @media only screen and (max-width: 820px), screen and (max-aspect-ratio: 1/1) {
+  background-color: white;
+    justify-self: center;
+    padding: 15px;
+    p{
+        line-height: 21px;
+        font-size: 12px;
+    }
+    h2{
+        line-height: 25px;
+        font-size: 20px;
+    }
+   }
 `;
 
 const Welcome = styled.h2`
@@ -152,7 +179,7 @@ height: 30px;
 padding: 0px 25px 0px;
 border: none;
     border-radius: 25px;
-    background-color: #333ADB;
+    background-color: #025dc7;
     color: white;
     cursor: pointer;
 `;
@@ -160,7 +187,7 @@ border: none;
 const Admin = styled.section`
 font-size: 12px;
 .admin{
-    color: #333ADB;
+    color: #025dc7;
     cursor: pointer;
 }
 `;

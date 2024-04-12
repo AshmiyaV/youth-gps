@@ -14,7 +14,7 @@ const SliderComp = (props) => {
     console.log(typeof(left))
       return(
         <TooltipWrap>
-        <span style={{position: "absolute", left: `${left}%`}}>{handleProps.value}</span>
+        <span style={{position: "absolute", left: `${left}%`}}>{`${handleProps.value}${handleProps.value === 30 && props.showPlus ? '+' : ""}`}</span>
        {node}
         </TooltipWrap>
       )
@@ -24,9 +24,9 @@ const SliderComp = (props) => {
         <Slider
                 defaultValue={0}
                 min={0}
-                max={30}
+                max={props.maxValue ? props.maxValue : 30}
                 styles={{
-                    handle: {borderColor: "#333ADB",
+                    handle: {borderColor: "#025dc7",
                     marginTop: -10,
                   backgroundImage: `url(${props.icon ? props.icon : Cigarrette})`,
                   backgroundPosition: 'center',
@@ -34,7 +34,7 @@ const SliderComp = (props) => {
                   opacity: "100%",}
                 }}
                 handleRender={handleLabel}
-                trackStyle={{ backgroundColor: "#333ADB", borderRadius: 50 }}
+                trackStyle={{ backgroundColor: "#025dc7", borderRadius: 50 }}
                 railStyle={{ backgroundColor: "#EBEBED", borderRadius: 50 }}
               />
               </SliderWrap>

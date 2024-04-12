@@ -2,16 +2,38 @@ import * as React from "react";
 import styled from "styled-components";
 import "rc-slider/assets/index.css";
 import { VapeWrap, QuestionNumber as BaseQuestionNumber } from "./VapeView";
+import SliderComp from "./SliderComp";
+import Cheers from '../resources/cheers.svg';
+import Clock from '../resources/clock.svg';
 
 const BACView = () => {
     return(
         <VapeWrap>      
                 <h2>Blood Alcohol Concentration</h2>
-                <h3>In order for us to calculate you blood Alcohol Concentration please give your best estimate of your height and weight.</h3>
                 <QuestionSection>
                     <div>
                     <QuestionNumber>
                         <span>1</span>
+                    </QuestionNumber>
+                    <h3>In the last four weeks, what is the largest number of standard drinks you have consumed on a single occasion?</h3>
+                    </div>
+                    <SliderComp icon={Cheers} showPlus={true} />              
+                </QuestionSection>
+                <h3>In order for us to calculate you blood Alcohol Concentration please give your best estimate of your height and weight.</h3>
+                <QuestionSection>
+                    <div>
+                    <QuestionNumber>
+                        <span>2</span>
+                    </QuestionNumber>
+                    <h3>Over how many hours did you drink this amount?</h3>
+                    </div>
+                    <SliderComp maxValue={24} icon={Clock} />              
+                </QuestionSection>
+                <h3>In order for us to calculate you blood Alcohol Concentration please give your best estimate of your height and weight.</h3>
+                <QuestionSection>
+                    <div>
+                    <QuestionNumber>
+                        <span>3</span>
                     </QuestionNumber>
                     <DataWrap>
                         <Label>
@@ -29,7 +51,7 @@ const BACView = () => {
                 <QuestionSection>
                     <div>
                     <QuestionNumber>
-                        <span>2</span>
+                        <span>4</span>
                     </QuestionNumber>
                     <DataWrap>
                     <Label>
@@ -39,7 +61,7 @@ const BACView = () => {
                     <input 
                     type="number"
                     />
-                    <h3>kg</h3>
+                    <h3>lbs</h3>
                     </Data>
                          </DataWrap>
                     </div>
