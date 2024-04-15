@@ -4,17 +4,23 @@ import PageLayout from "../components/PageLayout";
 import styled from 'styled-components';
 import NextButton from "../components/NextButton";
 import alcoholIcon from "../resources/alcohol.svg";
+import beerImage from "../resources/Beer.png";
+import blackBeerImage from "../resources/Black beer.png";
+import wineImage from "../resources/Coffee.png";
+import liquorImage from "../resources/Liquor.png";
 
 import SliderComponent from "./SliderComp";
+import QuestionBox from "../components/QuestionBox";
 
 const FlexBox = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     margin-bottom: 20px;
+    margin-left: -50px;
 
-    @media (max-width: 768px) {
-        flex-direction: column;
+    @media (max-width: 576px) {
+        margin-left: -40px;
     }
 `;
 
@@ -41,22 +47,31 @@ const Alcohol = (props) => {
     }
 
     return (<>
-        <PageLayout>
+        <PageLayout selected={'alcohol'}>
             <div className={alcohol_styles.container}>
                 {questions.map((question, index) => (
-                    <div key={index}>
-                        <div className={alcohol_styles.title}>{question}</div>
-                        <div className={alcohol_styles.answer}>
-                          <SliderComponent icon={alcoholIcon} handleAnswerChange={handleAnswerChange} index={index} answer={answers[index]}></SliderComponent>
-                         </div>
-
-                        {/* <div className={alcohol_styles.progressBar}>
-                            <div className={alcohol_styles.progressBarFill} style={{ width: '50%' }}></div>
-                            <div className={alcohol_styles.progressBarCircle}>
-                                <img src={HandCuffs} className={alcohol_styles.handcufficon} />
+                    <>
+                    {index == 1 ? <div key={index} style={{margin: '30px auto'}}>
+                        <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-between'}}>
+                            <QuestionBox question={question} index={index+1}></QuestionBox>
+                            <div style={{display: 'flex', flexDirection: 'row', width: '30%', marginRight: '-15%'}}>
+                                <img className={alcohol_styles.image} style={{width: '60px', height: '80px', marginRight: '-10px'}} src={beerImage} alt="beer" />
+                                <img className={alcohol_styles.image} style={{width: '30px', height: '30px', marginRight: '10px', marginTop:'50px'}} src={blackBeerImage} alt="beer" />
+                                <img className={alcohol_styles.image} style={{width: '50px', height: '80px', marginLeft: '-30px'}} src={wineImage} alt="beer" />
+                                <img className={alcohol_styles.image} style={{width: '80px', height: '50px', marginLeft: '-40px', marginTop:'25px'}} src={liquorImage} alt="beer" />
                             </div>
-                        </div> */}
-                    </div>
+                        </div>
+                        <div className={alcohol_styles.answer}>
+                          <SliderComponent min={0} icon={alcoholIcon} handleAnswerChange={handleAnswerChange} index={index} answer={answers[index]}></SliderComponent>
+                         </div>
+                    </div> : 
+                    <div key={index} style={{margin: '20px auto'}}>
+                        <QuestionBox question={question} index={index+1}></QuestionBox>
+                        <div className={alcohol_styles.answer}>
+                          <SliderComponent min = {0} icon={alcoholIcon} handleAnswerChange={handleAnswerChange} index={index} answer={answers[index]}></SliderComponent>
+                         </div>
+                    </div>}
+                    </>
                 ))}
             </div>
             <div className={alcohol_styles.button}>

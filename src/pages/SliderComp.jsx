@@ -10,11 +10,11 @@ import Cigarrette from '../resources/cigarrete.svg';
 
 const SliderComp = (props) => {
     const handleLabel = (node, handleProps) => {
-    const left = parseFloat(node.props.style.left) - 1.5;
+    const left = parseFloat(node.props.style.left) - 2.2;
     console.log(typeof(left))
       return(
         <TooltipWrap>
-        <span style={{position: "absolute", left: `${left}%`, bottom: "12px"}}>{handleProps.value}</span>
+        <span style={{position: "absolute", left: `${left}%`, bottom: "12px", top: '-24px'}}>{handleProps.value}</span>
        {node}
         </TooltipWrap>
       )
@@ -22,13 +22,13 @@ const SliderComp = (props) => {
     return(
         <SliderWrap>
         <Slider
-                defaultValue={20}
+                defaultValue={props.min ? props.min : 0}
                 min={0}
                 max={30}
                 styles={{
                     handle: {borderColor: "#333ADB",
-                    height: 50,
-                    width: 50,
+                    height: 40,
+                    width: 40,
                     marginLeft: -10,
                     marginTop: -10,
                   backgroundImage: `url(${props.icon ? props.icon : Cigarrette})`,
@@ -38,8 +38,8 @@ const SliderComp = (props) => {
                   opacity: "100%",}
                 }}
                 handleRender={handleLabel}
-                trackStyle={{ backgroundColor: "#333ADB", height: 30, borderRadius: 50 }}
-                railStyle={{ backgroundColor: "#EBEBED", height: 30, borderRadius: 50 }}
+                trackStyle={{ backgroundColor: "#333ADB", height: 24, borderRadius: 50 }}
+                railStyle={{ backgroundColor: "#EBEBED", height: 24, borderRadius: 50 }}
               />
               </SliderWrap>
     );

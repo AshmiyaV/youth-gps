@@ -54,7 +54,7 @@ const ProgressBar = (props) => {
                     <ImgWrap className= {classNames({
 		'selected': selected === i.title
 	})}>
-                        <img width="80px" height="80px" src={i.img} />
+                        <img width="60px" height="60px" src={i.img} />
                         </ImgWrap>
                         {index !== sections.length - 1 && <Line />}
                     </SectionDiv>)
@@ -122,8 +122,8 @@ width: 20%;
 } */
 .selected{
     img{
-        width: 110px;
-        height: 110px;
+        width: 80px;
+        height: 80px;
         border: 3px solid #333ADB;
         box-shadow: 0px 0px 10px 3px grey;
         border-radius: 50%;

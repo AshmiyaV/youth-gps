@@ -1,4 +1,4 @@
-import './HomeLoginPage.css'
+import './HomeLoginPage.module.css'
 import styled from "styled-components";
 // import vectorImage from '../resources/home-page-vector.png'
 import peopleImage from '../resources/homepage-bg.svg';

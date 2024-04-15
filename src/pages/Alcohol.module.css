@@ -16,6 +16,9 @@
     margin-top: 5px;
 }
 
+.image{
+  animation: fall 3s ease-in-out;
+}
 
 .progressBar {
     width: 100%;
@@ -44,6 +47,15 @@
     right: 49%;
     margin-top: -10px;;
     border: 1px solid #93B3FC;
+  }
+
+  @keyframes fall {
+    0% {
+      transform: translateY(-500%);
+    }
+    100% {
+      transform: translateY(0);
+    }
   }
 
 
