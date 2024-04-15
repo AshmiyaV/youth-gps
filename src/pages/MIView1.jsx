@@ -114,9 +114,15 @@ position: relative;
 background-color: white;
 margin: 20px 100px;
 padding: 30px;
+@media only screen and (max-width: 700px) {
+      width: 85%;
+      margin: 0px;
+      padding: 10px 15px 20px;
+    }
 `;
 const Button = styled.button`
-background-color: #333ADB;
+background-color: #025dc7;
+cursor: pointer;
 border: none;
 border-radius: 25px;
 color: white;
@@ -126,6 +132,15 @@ display: flex;
         margin-left: 10px;
     }
     padding: 0px 20px;
+    @media only screen and (max-width: 700px) {
+font-size: 10px;
+    height: 22px !important;
+    padding: 0px 10px;
+    img{
+        height: 17px;
+        margin-left: 5px;
+    }
+}
 `;
 const ButtonWrap = styled.div`
 position: absolute;

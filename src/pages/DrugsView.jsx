@@ -8,7 +8,7 @@ import Drug1 from '../resources/drug1.svg';
 import Drug2 from '../resources/drug2.svg';
 import Drug3 from '../resources/drug3.svg';
 import SliderComp from "./SliderComp";
-import { VapeWrap } from "./VapeView";
+import { VapeWrap, QuestionNumber, QuestionSection } from "./VapeView";
 
 const DrugsView = () => {
     return(
@@ -79,31 +79,31 @@ const DrugsView = () => {
     );
 }
 
-const QuestionNumber = styled.div`
-background-color: #4D71E5;
-width: 20px;
-height: 20px;
-position: absolute;
-    left: -40px;
-    top: 3px;
-border-radius: 50%;
-font-size: 13px;
-color: white;
-display: flex;
-justify-content: center;
-span{
-    align-self: center;
-    margin-bottom: 3px;
-}
-`;
+// const QuestionNumber = styled.div`
+// background-color: #4D71E5;
+// width: 20px;
+// height: 20px;
+// position: absolute;
+//     left: -40px;
+//     top: 3px;
+// border-radius: 50%;
+// font-size: 13px;
+// color: white;
+// display: flex;
+// justify-content: center;
+// span{
+//     align-self: center;
+//     margin-bottom: 3px;
+// }
+// `;
 
-const QuestionSection = styled.section`
-position: relative;
-    margin: 0;
-    padding: 0;
-    h3{
-        line-height: 1.5;
-    }
-`;
+// const QuestionSection = styled.section`
+// position: relative;
+//     margin: 0;
+//     padding: 0;
+//     h3{
+//         line-height: 1.5;
+//     }
+// `;
 
 export default DrugsView;

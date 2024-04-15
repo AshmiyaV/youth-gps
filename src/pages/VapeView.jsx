@@ -1,29 +1,14 @@
 import * as React from "react";
 import styled from "styled-components";
-import ProgressBar from "./ProgressBar";
-// import Slider from "rc-slider";
 import "rc-slider/assets/index.css";
 import VapeSlider from '../resources/vape_slider.svg';
 import Cigarrette from '../resources/cigarrete.svg';
 import Marijuana from '../resources/marijuana.svg';
 import SliderComp from "./SliderComp";
-// import {Label, Slider, SliderOutput, SliderThumb, SliderTrack} from 'react-aria-components';
 
 const VapeView = () => {
     return(
         <VapeWrap>      
-            {/* <ProgressBarWrap>
-               <ProgressBar />
-            </ProgressBarWrap> */}
-            {/* <Slider defaultValue={50}>
-  <Label>Opacity</Label>
-  <SliderOutput />
-  <SliderTrack>
-    <SliderThumb name="opacity" />
-  </SliderTrack>
-</Slider> */}
-
-            {/* <Form> */}
                 <h2>Vape/Smoke</h2>
                 <h3>Over the past 30 days, how many days, if any, did you…</h3>
                 <QuestionSection>
@@ -35,31 +20,6 @@ const VapeView = () => {
                     </div>
                     <p>By electronic vapor products we mean Vapes, vaporizers, vape pens, hookah pens, electronic cigarettes (e-cigarettes or e-cigs), e-pipes, or electronic nicotine delivery systems (ENDS).</p>
                     <SliderComp icon={VapeSlider} />
-                    {/* <SliderWrap>
-<Slider
-        defaultValue={20}
-        min={0}
-        max={100}
-        // width= {80}
-        trackStyle={{ backgroundColor: "#333ADB", height: 30, borderRadius: 50 }}
-        railStyle={{ backgroundColor: "#EBEBED", height: 30, borderRadius: 50 }}
-        handleStyle={{
-          borderColor: "#333ADB",
-          height: 50,
-          width: 50,
-          marginLeft: -10,
-          marginTop: -10,
-        //   borderRadius: 50,
-        //   backgroundColor: "#FFFFFF"
-        backgroundImage: `url(${VapeSlider})`,
-        backgroundPosition: 'center',
-        backgroundSize: "40px 40px",
-        backgroundRepeat: 'no-repeat',
-        opacity: "100%",
-        // background: "center"
-        }}
-      />
-      </SliderWrap> */}
                 </QuestionSection>
                 <QuestionSection>
                     <div>
@@ -87,46 +47,36 @@ const VapeView = () => {
 }
 
 export const VapeWrap = styled.article`
-/* width: 100%;
-background-color: #D3EEFF;
-display: flex;
-    flex-direction: column;
-    align-items: center; */
-    .rc-slider{
-        /* width: 70%; */
-    }
-    .rc-slider-handle{
-        &:focus{ 
-              /* border: none !important; */
-           outline: black;
-           /* box-shadow: none; */
-        }
-            /* background-color: black; */
-    }
     h2{
-        /* font-size: 1em; */
         font-size: 22px;
         margin: 0;
-        /* margin-left: 35px; */
     }
     h3{
-        /* font-size: 0.8em; */
         font-size: 18px;
         margin: 0;
         font-weight: normal;
-        /* padding: 5px 0; */
-        /* line-height: 0; */
     }
     p{
-        /* font-size: 0.6em; */
         font-size: 14px;
         margin: 0;
-        /* padding: 5px 0; */
         line-height: 25px;
+    }
+    @media only screen and (max-width: 700px) {
+        h2{
+            font-size: 13px !important;
+        }
+        h3{
+            font-size: 10px !important;
+            line-height: 17px !important;
+        }
+        p{
+            font-size: 8px !important;
+            line-height: 13px !important;
+        }
     }
 `;
 
-const QuestionNumber = styled.div`
+export const QuestionNumber = styled.div`
 background-color: #4D71E5;
 width: 20px;
 height: 20px;
@@ -137,20 +87,21 @@ border-radius: 50%;
 font-size: 13px;
 color: white;
 display: flex;
-/* place-items: center; */
 justify-content: center;
+@media only screen and (max-width: 700px) {
+    width: 13px;
+    height: 13px;
+    font-size: 9px;
+    top: 1px;
+    left: -22px;
+}
 span{
     align-self: center;
     margin-bottom: 3px;
 }
-/* margin: -30px; */
 `;
 
-// const SliderWrap = styled.div`
-//  margin: 25px 0 40px;
-// `;
-
-const QuestionSection = styled.section`
+export const QuestionSection = styled.section`
 position: relative;
     margin: 0;
     padding: 0;
