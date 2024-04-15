@@ -54,7 +54,7 @@ const MIMetrics1 = () => {
         <MetricsWrap>
             <Heading>
         <img width="150px" height="60px" src={logo} />
-        <h2>Metrics</h2>
+        <h2 style={{marginTop: '20px'}}>Metrics</h2>
         </Heading>
         <ContentWrap>
             <Top>
@@ -267,6 +267,7 @@ width: 85%;
     background-color: #D3EEFF;
         box-shadow: 0 0 25px #646464;
         margin-bottom: 40px;
+        margin-top: 25px;
     @media only screen and (max-width: 550px) {
     width: 100%;
     }
