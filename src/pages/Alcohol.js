@@ -11,6 +11,7 @@ import liquorImage from "../resources/Liquor.png";
 
 import SliderComponent from "./SliderComp";
 import QuestionBox from "../components/QuestionBox";
+import { useNavigate } from "react-router-dom";
 
 const FlexBox = styled.div`
     display: flex;
@@ -42,8 +43,17 @@ const Alcohol = (props) => {
 
     const handleAnswerChange = (index, value) => {
         const newAnswers = [...answers];
-        newAnswers[index] = parseInt(value);
+        newAnswers[index] = value;
         setAnswers(newAnswers);
+    }
+
+    const history = useNavigate();
+
+    const [enableNext, setEnableNext] = React.useState(true);
+
+
+    const OnNextSectionClicked = () => {
+        history('/MI/Metrics');
     }
 
     return (<>
@@ -62,20 +72,20 @@ const Alcohol = (props) => {
                             </div>
                         </div>
                         <div className={alcohol_styles.answer}>
-                          <SliderComponent min={0} icon={alcoholIcon} handleAnswerChange={handleAnswerChange} index={index} answer={answers[index]}></SliderComponent>
+                          <SliderComponent min={0} icon={alcoholIcon} handleAnswerChange={(value)=>handleAnswerChange(index, value)} index={index} answer={answers[index]}></SliderComponent>
                          </div>
                     </div> : 
                     <div key={index} style={{margin: '20px auto'}}>
                         <QuestionBox question={question} index={index+1}></QuestionBox>
                         <div className={alcohol_styles.answer}>
-                          <SliderComponent min = {0} icon={alcoholIcon} handleAnswerChange={handleAnswerChange} index={index} answer={answers[index]}></SliderComponent>
+                          <SliderComponent min = {0} icon={alcoholIcon} handleAnswerChange={(value)=>handleAnswerChange(index, value)} index={index} answer={answers[index]}></SliderComponent>
                          </div>
                     </div>}
                     </>
                 ))}
             </div>
             <div className={alcohol_styles.button}>
-                <NextButton></NextButton>
+                <NextButton enabled={enableNext} goToNextSextion={()=>OnNextSectionClicked()}></NextButton>
             </div>
         </PageLayout>
     </>

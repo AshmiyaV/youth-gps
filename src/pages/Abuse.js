@@ -12,6 +12,7 @@ import grey_agree_img from '../resources/grey_agree.svg';
 import grey_disagree_img from '../resources/grey_disagree.svg';
 import grey_strongly_disagree_img from '../resources/grey_strong_disagree.svg';
 import grey_strongly_agree_img from '../resources/grey_strongly_agree.svg';
+import QuestionBox from "../components/QuestionBox";
 
 const FlexBox = styled.div`
     display: flex;
@@ -45,7 +46,9 @@ const Abuse = (props) => {
             <div className={abuse_styles.container}>
                 <FlexBox>
                     <div className={abuse_styles.firstQuestionDiv}>
-                        <p className={abuse_styles.title}>{questions[0]}</p>
+                        {/* <p className={abuse_styles.title}>{questions[0]}</p>
+                         */}
+                         <QuestionBox question={questions[0]} index={1}></QuestionBox>
                     </div>
                     <div className={abuse_styles.selectDiv}>
                         <select className={abuse_styles.select} onChange={(e) => handleAnswerChange(0, e.target.value)}>
@@ -61,7 +64,8 @@ const Abuse = (props) => {
                 {questions.slice(1, questions.length).map((question, index)=> (
                     <FlexBox style={{marginBottom: '0px'}} key={index}>
                         <div className={abuse_styles.questionDiv}>
-                            <p className={abuse_styles.title}>{question}</p>
+                            {/* <p className={abuse_styles.title}>{question}</p> */}
+                            <QuestionBox question={question} index={index+2}></QuestionBox>
                         </div>
                         <div className= {abuse_styles.optionBox}>
                             <div className={abuse_styles.emojiOption}>

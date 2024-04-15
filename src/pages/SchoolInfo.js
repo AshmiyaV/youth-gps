@@ -11,6 +11,9 @@ import NoAnswerGrey from '../resources/no-answer-checkmark-grey.svg';
 import NextButton from "../components/NextButton";
 import HandCuffs from "../resources/Handcuffs.svg";
 import student_image from "../resources/canva-student.png"; 
+import { useNavigate } from "react-router-dom";
+import SliderComponent from "./SliderComp";
+
 
 const FlexBox = styled.div`
     display: flex;
@@ -49,6 +52,22 @@ const SchoolInfo = (props) => {
                         "Would you know where to go near you to see a healthcare professional regarding HIV/AIDS or other sexually transmitted health issues?",
                         "Are you on parole or probation?"]
     const [answers, setAnswers] = useState([999, 9999, 999, 999, 999])
+    const [arrested, setArrested] = useState(0)
+    const history = useNavigate();
+
+    const [enableNext, setEnableNext] = React.useState(false);
+
+    console.log(arrested)
+    React.useEffect(() => {
+        if(!(answers.includes(999) || answers.includes(9999))){
+            setEnableNext(true);
+        }
+        } , [answers]
+    )
+
+    const OnNextSectionClicked = () => {
+        history('/alcohol');
+    }
 
     const onAnswerChange = (answer, index) => {
         let answers_changed = [...answers];
@@ -67,11 +86,12 @@ const SchoolInfo = (props) => {
                     <div className={schoolInfo_styles.title}>
                     In the past 30 days, how many times have you been arrested?
                     </div>
-                    <div className={schoolInfo_styles.progressBar}>
-                        <div className={schoolInfo_styles.progressBarFill} style={{ width: '50%' }}></div>
+                    <div>
+                        {/* <div className={schoolInfo_styles.progressBarFill} style={{ width: '50%' }}></div>
                         <div className={schoolInfo_styles.progressBarCircle}>
                             <img src={HandCuffs} className={schoolInfo_styles.handcufficon} />
-                        </div>
+                        </div> */}
+                        <SliderComponent min={0} icon={HandCuffs} handleAnswerChange={(value)=>setArrested(value)} answer={arrested}></SliderComponent>
                     </div>
                 </FlexBox>
                 {questions.slice(1).map((question, index) => (
@@ -80,7 +100,7 @@ const SchoolInfo = (props) => {
 
             </div>
             <div style={{margin: '30px auto'}}>
-                <NextButton></NextButton>
+                <NextButton enabled={enableNext} goToNextSextion={()=>OnNextSectionClicked()}></NextButton>
             </div>
         </PageLayout>
     </>

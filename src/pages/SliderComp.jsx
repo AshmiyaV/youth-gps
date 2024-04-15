@@ -11,7 +11,11 @@ import Cigarrette from '../resources/cigarrete.svg';
 const SliderComp = (props) => {
     const handleLabel = (node, handleProps) => {
     const left = parseFloat(node.props.style.left) - 2.2;
-    console.log(typeof(left))
+    // console.log(handleProps.value)
+    if (props.answer != handleProps.value) {
+      props.handleAnswerChange(handleProps.value)
+
+    }
       return(
         <TooltipWrap>
         <span style={{position: "absolute", left: `${left}%`}}>{`${handleProps.value}${handleProps.value === 30 && props.showPlus ? '+' : ""}`}</span>
@@ -19,18 +23,19 @@ const SliderComp = (props) => {
         </TooltipWrap>
       )
     }
+    console.log(props)
     return(
         <SliderWrap>
         <Slider
                 defaultValue={0}
-                min={0}
+                min={props.min ? props.min : 0}
                 max={props.maxValue ? props.maxValue : 30}
                 styles={{
-                    height: 40,
-                    width: 40,
+                    height: 30,
+                    width: 30,
                     marginLeft: -10,
                     handle: {borderColor: "#025dc7",
-                    marginTop: -10,
+                    marginTop: -4,
                   backgroundImage: `url(${props.icon ? props.icon : Cigarrette})`,
                   backgroundPosition: 'center',
                   backgroundRepeat: 'no-repeat',
@@ -53,9 +58,9 @@ const SliderWrap = styled.div`
       height: 30px;
     }
     .rc-slider-handle{
-        height: 50px;
-                    width: 50px;
-                    background-size: 40px 40px;
+        height: 40px;
+                    width: 40px;
+                    background-size: 30px 30px;
                     /* margin-left: 25px; */
                     /* transform: translateX(-100%) !important; */
                     /* left: 20px !important; */
@@ -67,7 +72,7 @@ const SliderWrap = styled.div`
     @media only screen and (max-width: 700px) {
   /* For everything bigger than 768px */
   .rc-slider-rail, .rc-slider-track{
-    height: 25px;
+    height: 20px;
   }
   .rc-slider-handle{
         height: 30px;

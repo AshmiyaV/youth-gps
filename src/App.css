@@ -37,9 +37,10 @@
   }
 }
 
-body, html {
+body, html{
   font-family: "Imprima" !important;
   color: #3e3e3e;
+  height: 100% !important;
 }
 
 #root{

@@ -1,4 +1,4 @@
-import './HomeLoginPage.module.css'
+import home_styles from './HomeLoginPage.module.css';
 import styled from "styled-components";
 // import vectorImage from '../resources/home-page-vector.png'
 import peopleImage from '../resources/homepage-bg.svg';
@@ -40,7 +40,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
     const onLogin = () => {
         if(!!name && !!id){
-        history("/MI")
+        history("/candidateInfo")
         }
         else if(!name){
             toast.error('Please enter your name');
@@ -59,20 +59,20 @@ import 'react-toastify/dist/ReactToastify.css';
                             {/* <img className='vector1' src={vectorImage} alt="Welcome to Youth GPS"></img> */}
                             {/* <img className='peopleImage' src={peopleImage} alt="Welcome to Youth GPS"></img> */}
                         </ImageDiv>
-                        <div className="textDiv">
+                        <div className={home_styles.textDiv}>
                             <img width="150px" height="60px" src={logo}></img>
                             <InnerDiv>
                             <Welcome>Welcome to Survey</Welcome>
-                            <p>
+                            <p style={{margin: '20px 0'}}>
                                 This survey will ask questions about your alcohol and tobacco use and provide you personalized feedback on your drinking. It will take approximately 10 minutes to complete.
                                 The survey is conducted by the University of Florida to explore the use of alcohol by young adults. Administrators at the University of Florida will not be made aware of your responses. 
                             </p>
-                            <p>
+                            <p style={{marginBottom: '40px'}}>
                                 In order for us to personalize this survey for you, please enter a name in the box below.Please do not enter your last name.                    
                                 </p>
                             <div>
-                                <input type='text' onChange={onNameChangeFunction} className='nameInput' placeholder='Your Name' value={name}></input>
-                                <input onChange={onIdChangeFunction} className='idInput' placeholder='Your ID' value={id}></input>
+                                <input type='text' onChange={onNameChangeFunction} className={home_styles.nameInput} placeholder='Your Name' value={name}></input>
+                                <input onChange={onIdChangeFunction} className={home_styles.idInput} placeholder='Your ID' value={id}></input>
                             </div>
                             <div>
                                 <LoginBtn onClick={onLogin}>Let's Get Started</LoginBtn>
@@ -122,7 +122,8 @@ margin: 20px;
         font-size: 14px;
     }
     img{
-    overflow:hidden; }
+    overflow:hidden;
+    margin: 40px 0; }
     @media only screen and (max-width: 820px), screen and (max-aspect-ratio: 1/1) {
   /* For everything bigger than 768px */
   .peopleImage{
@@ -177,6 +178,7 @@ font-size: 12px;
 margin: 10px;
 height: 30px;
 padding: 0px 25px 0px;
+font-family: 'Inknut Antiqua', sans-serif;
 border: none;
     border-radius: 25px;
     background-color: #025dc7;

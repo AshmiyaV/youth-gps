@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef } from "react";
 import candidateInfo_styles from './CandidateInfo.module.css';
 import PageLayout from "../components/PageLayout";
 import styled from 'styled-components';
@@ -9,6 +9,9 @@ import 'react-datepicker/dist/react-datepicker.css';
 import armedForcesImage from "../resources/armed_forces.png";
 import student_image from "../resources/canva-student.png";
 import User from '../resources/user.svg';
+import { useNavigate } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const FlexBox = styled.div`
@@ -28,7 +31,7 @@ const CalendarDiv = styled.div`
   }
 
   @media (max-width: 576px) {
-    width: 40%;
+    width: 60%;
     font-size: 10px;
   }
 
@@ -54,14 +57,28 @@ const CustomDatePicker = styled(DatePicker)`
 
 const CandidateInfo = (props) => {
     const [selectedDate, setSelectedDate] = React.useState(null);
-    const [showHomeOptions, setShowHomeOptions] = React.useState(false);
-    const [showLiveWithOptions, setShowLiveWithOptions] = React.useState(false);
     const [homeOption, setHomeOption] = React.useState(null);
     const [liveOption, setLiveWithOption] = React.useState("");
     const [incomeOption, setIncomeOption] = React.useState("");
     const [collegeAttending, setCollegeAttending] = React.useState(false);
     const [armedForces, setArmedForces] = React.useState(false);
+    const [gender, setGender] = React.useState(null);
     const dateInputRef = useRef(null);
+    const history = useNavigate();
+
+    const [enableNext, setEnableNext] = React.useState(false);
+
+    React.useEffect(() => {
+        if(homeOption && liveOption != '' && incomeOption != '' && gender && selectedDate){
+            setEnableNext(true);
+        }
+        } , [homeOption, liveOption, incomeOption, gender, selectedDate]
+    )
+
+    const OnNextSectionClicked = () => {
+        history('/schoolInfo');
+    }
+    
 
     const openDateInput = () => {
         // const dateInput = document.querySelector('input[type="date"]');
@@ -99,10 +116,10 @@ const CandidateInfo = (props) => {
     
     return (<>
         <PageLayout selected={"basic_info"}>
-            <FlexBox style={{marginRight: '5px', justifyContent: 'space-between'}}>
+            <FlexBox style={{marginRight: '5px', justifyContent: 'space-between', alignItems: 'self-end'}}>
                 
                 <div>
-                    <p className={candidateInfo_styles.birthdateDiv} style={{margin: '20px 0 20px 0', fontSize: '16px', fontWeight: '600'}}>Hi, John Doe, Tell Us About You and Your living situation  </p>
+                    <p className={candidateInfo_styles.birthdateDiv} style={{fontWeight: '600'}}>Hi, John Doe, Tell Us About You and Your living situation  </p>
                     <FlexBox style={{justifyContent: 'space-between', alignItems: 'center', margin: '0'}}>
                         <div className={candidateInfo_styles.birthdateDiv} style={{marginTop: '10px'}}>
                             What is your date of birth? 
@@ -125,10 +142,31 @@ const CandidateInfo = (props) => {
                                 onClick={()=>openDateInput()}  src={calendar} alt="calendar" />
                         </CalendarDiv>
                     </FlexBox>
+                    <FlexBox style={{justifyContent: 'space-between', alignItems: 'center', marginLeft: '0'}}>
+                        <div className={candidateInfo_styles.birthdateDiv}>Gender</div>
+                        <label className={candidateInfo_styles.birthdateDiv}>
+                            <input
+                                type="radio"
+                                value="male"
+                                checked={gender == 'M'}
+                                onChange={()=>setGender('M')}
+                            />
+                            Male
+                        </label>
+                        <label className={candidateInfo_styles.birthdateDiv}>
+                            <input
+                                type="radio"
+                                value="female"
+                                checked={gender == 'F'}
+                                onChange={()=>setGender('F')}
+                            />
+                            Female
+                            </label>
+                    </FlexBox>
                 </div>
 
-                <div style={{width: '30%'}}>
-                    <img style={{width: '100%', height: '250px', borderRadius: '50%'}} src={User}></img>
+                <div className={candidateInfo_styles.userImageDiv}>
+                    <img className={candidateInfo_styles.userImage} src={User}></img>
                 </div>
                 
             </FlexBox>
@@ -203,7 +241,7 @@ const CandidateInfo = (props) => {
 
                     <div style={{width: '95%'}}>
                         {/* <input className={candidateInfo_styles.incomeInput} list='stay'></input> */}
-                        <select style={{height: '100%'}} selected={incomeOption} onChange={(e)=>setHomeOption(e.target.value)} className={candidateInfo_styles.selectBox}>
+                        <select style={{height: '100%'}} selected={incomeOption} onChange={(e)=>setIncomeOption(e.target.value)} className={candidateInfo_styles.selectBox}>
                         <option value="" selected></option>
                         {Object.keys(incomeOptions).map(key =>(
                             <option value={key}>{incomeOptions[key]}</option>
@@ -214,7 +252,7 @@ const CandidateInfo = (props) => {
                 </div>
             </div>
             <div style={{margin: '30px auto'}}>
-                <NextButton></NextButton>
+                <NextButton enabled={enableNext} goToNextSextion={()=>OnNextSectionClicked()} ></NextButton>
             </div>
         </PageLayout>
     </>

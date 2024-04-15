@@ -105,8 +105,11 @@
   }
 
   .selectDiv{
-    width: 90%;
+    width: 100%;
     margin: auto;
+    margin-left: -8px;
+    margin-top: 20px;
+
   }
 
   .firstQuestionDiv{
@@ -134,5 +137,13 @@
 
   .emojiText{
     text-align: center;
+  }
+
+  .selectDiv{
+    width: 100%;
+    margin: auto;
+    margin-left: -4px;
+    margin-top: 20px;
+
   }
 }
