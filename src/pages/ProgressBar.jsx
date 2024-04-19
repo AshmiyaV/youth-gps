@@ -39,15 +39,15 @@ const ProgressBar = (props) => {
     ];
     const selected = props.selected ? props.selected : "vape";
         return (
-            <>
-            <div style={{display: 'grid', gridTemplateColumns: '50% 50%'}}>
-                    <div style={{alignItems: 'left'}}>
-                        <img style={{float: 'left', marginLeft: '0',width: '14%'}} src={logo} ></img>
-                    </div>
-                    <div style={{fontSize: '16px', color: 'black', textAlign: 'right', fontFamily: 'Inder'}}>
+            <ProgressWrap>
+            <WelcomeDiv>
+                    <ImgDiv>
+                        <img src={logo} ></img>
+                    </ImgDiv>
+                    <WelcomeText>
                         Hi, Student Name
-                    </div>
-                </div>
+                    </WelcomeText>
+                </WelcomeDiv>
                 <Bar>
                   {sections.map((i, index) => {
                    return( <SectionDiv key={i.title}>
@@ -60,7 +60,7 @@ const ProgressBar = (props) => {
                     </SectionDiv>)
                   })}
                 </Bar>
-            </>
+            </ProgressWrap>
         )
 }
 
@@ -76,7 +76,18 @@ margin: auto;
         display: none !important;
         }
     }
+    @media only screen and (max-width: 700px) {
+      width: 95%;
+    }
 /* } */
+`;
+
+const ProgressWrap = styled.article`
+width: 100%;
+margin: 0 30px;
+@media only screen and (max-width: 700px) {
+  margin: 0 10px;
+}
 `;
 
 const ImgWrap = styled.section`
@@ -101,6 +112,35 @@ img{
     height: 65px;
   }
 }
+`;
+
+const WelcomeDiv = styled.div`
+display: grid;
+grid-template-columns: 50% 50%;
+`;
+
+const ImgDiv = styled.div`
+align-items: left;
+img{
+  float: left;
+  margin-left: 0;
+  width: 14%;
+}
+@media only screen and (max-width: 700px) {
+  img{
+    width: 27%;
+  }
+}
+`;
+
+const WelcomeText = styled.div`
+font-size: 16px;
+color: black;
+text-align: right;
+@media only screen and (max-width: 700px) {
+  font-size: 10px;
+}
+ /* fontFamily: 'Inder' */
 `;
 
 const SectionDiv = styled.div`

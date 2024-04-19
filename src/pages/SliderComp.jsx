@@ -12,7 +12,7 @@ const SliderComp = (props) => {
     const handleLabel = (node, handleProps) => {
     const left = parseFloat(node.props.style.left) - 2.2;
     // console.log(handleProps.value)
-    if (props.answer != handleProps.value) {
+    if (props.answer != handleProps.value && props.handleAnswerChange) {
       props.handleAnswerChange(handleProps.value)
 
     }

@@ -109,12 +109,12 @@ display: flex;
     flex-direction: column;
 `;
 const Form = styled.section`
-width: 80%;
+width: 70%;
 position: relative;
 background-color: white;
 margin: 20px 100px;
 padding: 30px;
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 768px) {
       width: 85%;
       margin: 0px;
       padding: 10px 15px 20px;
